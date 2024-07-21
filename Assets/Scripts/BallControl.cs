@@ -77,6 +77,8 @@ public class BallControl : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        rb.velocity = Vector2.zero;  
+        rb.angularVelocity = 0f;
         if (collision.gameObject.CompareTag("Ground")) {
             grounded = true;
         }

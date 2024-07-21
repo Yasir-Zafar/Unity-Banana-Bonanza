@@ -11,10 +11,9 @@ public class BananaControl : MonoBehaviour
     }
 
     private void EndGame() {
-        Debug.Log("Game Over!");
-
-        Application.Quit();
-
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneController sceneController = FindObjectOfType<SceneController>();
+        if (sceneController != null) {
+            sceneController.LoadNextLevel();
+        }
     }
 }
