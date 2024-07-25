@@ -1,24 +1,56 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneController : MonoBehaviour
 {
-    // Call this method to load the next level
-    public void LoadNextLevel() {
-        // Get the current scene index and load the next scene
+    public void LoadNextLevel()
+    {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
-        
-        // Check if the next scene index is within bounds
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) {
-            SceneManager.LoadScene(nextSceneIndex);
-        } else {
-            Debug.Log("Yippee");
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            StartCoroutine(LoadSceneAsync(nextSceneIndex));
+        }
+        else
+        {
+            QuitGame();
         }
     }
 
-    // Call this method to load a specific scene by name
-    public void LoadLevel(string sceneName) {
-        SceneManager.LoadScene(sceneName);
+    public void LoadLevel(string sceneName)
+    {
+        // Start asynchronous scene loading by scene name
+        StartCoroutine(LoadSceneAsync(sceneName));
+    }
+
+    private IEnumerator LoadSceneAsync(int sceneIndex)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    private IEnumerator LoadSceneAsync(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    private void QuitGame()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
     }
 }

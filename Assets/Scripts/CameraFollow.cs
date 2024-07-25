@@ -41,7 +41,7 @@ public class CameraFollow : MonoBehaviour
             floorY + cameraHeight / 2
         );
         maxBounds = new Vector2(
-            0, // Fixed x position
+            0,
             ceilingY - cameraHeight / 2 - boundaryPadding 
         );
     }

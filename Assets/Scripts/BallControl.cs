@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallControl : MonoBehaviour
-{    
+{
     public float power = 7f;
     public float maxDrag = 2f;
     public Rigidbody2D rb;
@@ -18,13 +18,13 @@ public class BallControl : MonoBehaviour
     private void Start() {
         Color startColor = lr.startColor;
         Color endColor = lr.endColor;
-        startColor.a = 0.1f; 
+        startColor.a = 0.1f;
         endColor.a = 0.1f;
         lr.startColor = startColor;
         lr.endColor = endColor;
     }
 
-    private void Update(){
+    private void Update() {
         if ((grounded || onBranch) && Input.touchCount > 0) {
             touch = Input.GetTouch(0);
 
@@ -45,9 +45,10 @@ public class BallControl : MonoBehaviour
     void DragStart() {
         dragStartPos = Camera.main.ScreenToWorldPoint(touch.position);
         dragStartPos.z = 0f;
-        lr.positionCount = 1;
-        lr.SetPosition(0, dragStartPos);
+        lr.positionCount = 2;
+        lr.SetPosition(0, transform.position); // Set the start position to the ball's position
     }
+
     void Dragging() {
         Vector3 draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
         draggingPos.z = 0f;
@@ -57,9 +58,10 @@ public class BallControl : MonoBehaviour
             draggingPos = dragStartPos + dragVector.normalized * maxDrag;
         }
 
-        lr.positionCount = 2;
-        lr.SetPosition(1, draggingPos);
+        lr.SetPosition(0, transform.position); // Always set the start position to the ball's position
+        lr.SetPosition(1, transform.position - dragVector); // Set the end position opposite to the drag direction
     }
+
     void DragRelease() {
         lr.positionCount = 0;
 
@@ -77,7 +79,7 @@ public class BallControl : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        rb.velocity = Vector2.zero;  
+        rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
         if (collision.gameObject.CompareTag("Ground")) {
             grounded = true;
@@ -105,11 +107,10 @@ public class BallControl : MonoBehaviour
         Vector3 branchCenter = currentBranch.position;
 
         Vector3 ballPosition = branchCenter;
-        ballPosition.y += (transform.localScale.y / 2);  
+        ballPosition.y += (transform.localScale.y / 2);
 
-        rb.velocity = Vector2.zero;  
+        rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
         transform.position = ballPosition;
     }
-
 }
