@@ -11,12 +11,12 @@ public class CameraFollow : MonoBehaviour
     public Vector2 minBounds; 
     public Vector2 maxBounds; 
 
-    private Camera camera;
+    private Camera mainCamera; 
     private float cameraHeight;
 
     private void Start() {
-        camera = GetComponent<Camera>();
-        cameraHeight = camera.orthographicSize * 2;
+        mainCamera = GetComponent<Camera>();
+        cameraHeight = mainCamera.orthographicSize * 2;
         UpdateBounds();
     }
 

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PantherSwipe : MonoBehaviour
@@ -9,23 +8,31 @@ public class PantherSwipe : MonoBehaviour
     public float swipeAngle = 30f;
     public float swipeSpeed = 2f; 
     public float swipeInterval = 1f; 
+    public float visibilityDuration = 0.1f; 
 
     private bool isSwiping = false;
     private float startAngle;
     private float endAngle;
     private float currentAngle;
-    private Renderer swipeArcRenderer;
+    private LineRenderer swipeArcLineRenderer;
+    private SpriteRenderer swipeArcSpriteRenderer;
     private Collider2D swipeArcCollider;
 
     private void Start()
     {
         startAngle = -swipeAngle / 2;
         endAngle = swipeAngle / 2;
-        swipeArcRenderer = swipeArc.GetComponent<Renderer>();
+
+        swipeArcLineRenderer = swipeArc.GetComponent<LineRenderer>();
+        swipeArcSpriteRenderer = swipeArc.GetComponent<SpriteRenderer>();
         swipeArcCollider = swipeArc.GetComponent<Collider2D>();
-        
-        swipeArcRenderer.enabled = false; 
-        swipeArcCollider.enabled = false; 
+
+        if (swipeArcLineRenderer != null)
+            swipeArcLineRenderer.enabled = false;
+        if (swipeArcSpriteRenderer != null)
+            swipeArcSpriteRenderer.enabled = false;
+        if (swipeArcCollider != null)
+            swipeArcCollider.enabled = false;
 
         StartCoroutine(SwipeRoutine());
     }
@@ -34,12 +41,17 @@ public class PantherSwipe : MonoBehaviour
     {
         while (true)
         {
-            yield return StartCoroutine(Swipe());
-            swipeArcRenderer.enabled = false; 
-            swipeArcCollider.enabled = false; 
+            if (!isSwiping)
+            {
+                SetSwipeArcVisibility(true);
+                
+                yield return new WaitForSeconds(visibilityDuration);
+                
+                yield return StartCoroutine(Swipe());
+
+                SetSwipeArcVisibility(false);
+            }      
             yield return new WaitForSeconds(swipeInterval);
-            swipeArcRenderer.enabled = true; 
-            swipeArcCollider.enabled = true; 
         }
     }
 
@@ -47,13 +59,25 @@ public class PantherSwipe : MonoBehaviour
     {
         isSwiping = true;
         currentAngle = startAngle;
+
         while (currentAngle < endAngle)
         {
             currentAngle += Time.deltaTime * swipeSpeed * swipeAngle;
             swipeArcParent.localRotation = Quaternion.Euler(0f, 0f, currentAngle);
             yield return null;
         }
+
         swipeArcParent.localRotation = Quaternion.Euler(0f, 0f, startAngle);
         isSwiping = false;
+    }
+
+    private void SetSwipeArcVisibility(bool visible)
+    {
+        if (swipeArcLineRenderer != null)
+            swipeArcLineRenderer.enabled = visible;
+        if (swipeArcSpriteRenderer != null)
+            swipeArcSpriteRenderer.enabled = visible;
+        if (swipeArcCollider != null)
+            swipeArcCollider.enabled = visible;
     }
 }
