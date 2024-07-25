@@ -15,14 +15,21 @@ public class BallControl : MonoBehaviour
     private bool onBranch;
     private Transform currentBranch;
 
-    private void Start() {
+private void Start() {
+    if (lr != null) {
         Color startColor = lr.startColor;
         Color endColor = lr.endColor;
         startColor.a = 0.1f;
         endColor.a = 0.1f;
         lr.startColor = startColor;
         lr.endColor = endColor;
+
+        lr.widthMultiplier = 0.5f;
+        lr.positionCount = 0;
+    } else {
+        Debug.LogWarning("LineRenderer is not assigned!");
     }
+}
 
     private void Update() {
         if ((grounded || onBranch) && Input.touchCount > 0) {
@@ -46,7 +53,8 @@ public class BallControl : MonoBehaviour
         dragStartPos = Camera.main.ScreenToWorldPoint(touch.position);
         dragStartPos.z = 0f;
         lr.positionCount = 2;
-        lr.SetPosition(0, transform.position); // Set the start position to the ball's position
+        lr.SetPosition(0, transform.position); 
+        lr.SetPosition(1, transform.position); 
     }
 
     void Dragging() {
@@ -58,8 +66,8 @@ public class BallControl : MonoBehaviour
             draggingPos = dragStartPos + dragVector.normalized * maxDrag;
         }
 
-        lr.SetPosition(0, transform.position); // Always set the start position to the ball's position
-        lr.SetPosition(1, transform.position - dragVector); // Set the end position opposite to the drag direction
+        lr.SetPosition(0, transform.position); 
+        lr.SetPosition(1, transform.position - dragVector);
     }
 
     void DragRelease() {
@@ -77,27 +85,31 @@ public class BallControl : MonoBehaviour
             currentBranch = null;
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("Collision with: " + collision.gameObject.name);
+
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
+
         if (collision.gameObject.CompareTag("Ground")) {
             grounded = true;
-        }
-        else if (collision.gameObject.CompareTag("Branch")) {
+            Debug.Log("Ball is grounded.");
+        } else if (collision.gameObject.CompareTag("Branch")) {
             onBranch = true;
             currentBranch = collision.transform;
             PositionOnBranch();
+            Debug.Log("Ball is on a branch.");
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             grounded = false;
-        }
-        else if (collision.gameObject.CompareTag("Branch")) {
+            Debug.Log("Ball left the ground.");
+        } else if (collision.gameObject.CompareTag("Branch")) {
             onBranch = false;
             currentBranch = null;
+            Debug.Log("Ball left the branch.");
         }
     }
 
