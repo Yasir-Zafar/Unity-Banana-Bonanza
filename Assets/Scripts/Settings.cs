@@ -9,7 +9,7 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        // Ensure the toggleButton starts as inactive
+        // Ensure the MusicButton starts as inactive
         toggleButton.gameObject.SetActive(false);
     }
 
@@ -17,7 +17,7 @@ public class Settings : MonoBehaviour
     {
         isToggleButtonActive = !isToggleButtonActive;
 
-        // Set the active state of the toggleButton and its interactable state
+        // Set the active state of the MusicButton and its interactable state
         toggleButton.gameObject.SetActive(isToggleButtonActive);
         toggleButton.interactable = isToggleButtonActive;
     }
