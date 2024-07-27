@@ -1650,7 +1650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4545842557790029335, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
       propertyPath: m_Name
-      value: Banana
+      value: BananaBG
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
