@@ -400,6 +400,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1688143d86fc57f6bbd153422f4cc975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 3
+  animatorF: {fileID: 0}
+  animationNameF: 
+  animatorSF: {fileID: 0}
+  animationNameSF: 
+  animatorBG: {fileID: 0}
+  animationNameBG: 
 --- !u!50 &298970789
 Rigidbody2D:
   serializedVersion: 4
@@ -1719,8 +1726,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb529ac7fd8249a14968e13e395376d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 7
-  maxDrag: 2
+  power: 5
+  sensitivity: 2.4
+  maxForce: 12
+  maxLineHeight: 2.4
+  glideSpeed: 5
   rb: {fileID: 1500059669}
   lr: {fileID: 1500059668}
 --- !u!120 &1500059668

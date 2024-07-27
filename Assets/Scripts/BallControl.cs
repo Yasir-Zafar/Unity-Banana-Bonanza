@@ -8,6 +8,7 @@ public class BallControl : MonoBehaviour
     public float sensitivity = 2f;
     public float maxForce = 15f;
     public float maxLineHeight = 5f;
+    public float glideSpeed = 5f;
     public Rigidbody2D rb;
     public LineRenderer lr;
 
@@ -67,9 +68,11 @@ public class BallControl : MonoBehaviour
         draggingPos.z = 0f;
 
         Vector3 dragVector = draggingPos - dragStartPos;
-        
+
         Vector3 endPos = transform.position - dragVector;
-        endPos.y = Mathf.Clamp(endPos.y, transform.position.y, transform.position.y + maxLineHeight);
+        endPos.x = Mathf.Clamp(endPos.x, transform.position.x, transform.position.x + maxLineHeight - 2 );
+        endPos.y = Mathf.Clamp(endPos.y, transform.position.y, transform.position.y + maxLineHeight );
+        endPos.z = Mathf.Clamp(endPos.z, transform.position.z, transform.position.z + maxLineHeight - 1);
 
         lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, endPos);
@@ -84,7 +87,6 @@ public class BallControl : MonoBehaviour
         Vector3 force = dragStartPos - dragReleasePos;
         Vector3 clampedForce = Vector3.ClampMagnitude(force, sensitivity) * power;
 
-        // Apply hard limit to the final force
         clampedForce = Vector3.ClampMagnitude(clampedForce, maxForce);
 
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
@@ -106,7 +108,7 @@ public class BallControl : MonoBehaviour
         } else if (collision.gameObject.CompareTag("Branch")) {
             onBranch = true;
             currentBranch = collision.transform;
-            PositionOnBranch();
+            StartCoroutine(GlideToBranchCenter(collision.contacts[0].point));
             Debug.Log("Ball is on a branch.");
         }
     }
@@ -122,16 +124,24 @@ public class BallControl : MonoBehaviour
         }
     }
 
-    private void PositionOnBranch() {
-        if (currentBranch == null) return;
+    private IEnumerator GlideToBranchCenter(Vector2 contactPoint) {
+        if (currentBranch == null) yield break;
 
         Vector3 branchCenter = currentBranch.position;
+        Vector3 startPos = transform.position;
 
-        Vector3 ballPosition = branchCenter;
-        ballPosition.y += (transform.localScale.y / 2); // Adjust as necessary
+        float elapsedTime = 0f;
+        while (elapsedTime < 1f) {
+            elapsedTime += Time.deltaTime * glideSpeed;
+            float t = Mathf.Clamp01(elapsedTime);
 
+            transform.position = Vector3.Lerp(startPos, branchCenter, t);
+
+            yield return null;
+        }
+        
+        transform.position = branchCenter;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
-        transform.position = ballPosition;
     }
 }

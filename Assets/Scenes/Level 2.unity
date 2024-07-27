@@ -850,8 +850,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 5
   sensitivity: 2.4
-  maxForce: 11.4
+  maxForce: 12
   maxLineHeight: 2.4
+  glideSpeed: 5
   rb: {fileID: 1070123576}
   lr: {fileID: 1070123581}
 --- !u!120 &1070123581
