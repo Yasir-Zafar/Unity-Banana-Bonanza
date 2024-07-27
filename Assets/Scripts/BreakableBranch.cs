@@ -3,17 +3,17 @@ using System.Collections;
 
 public class BreakableBranch : MonoBehaviour
 {
-    public float breakTime = 2f; // Time after which the branch breaks
-    public float regenerateTime = 3f; // Time after which the branch regenerates
-    public GameObject branchBase; // The small portion that remains on the wall
-    public float fallDistance = 0.05f; // Distance the branch falls when it breaks
-    public float fadeDuration = 0.05f; // Duration of the fade-out and fade-in
+    public float breakTime = 2f; 
+    public float regenerateTime = 3f; 
+    public GameObject branchBase; 
+    public float fallDistance = 0.05f;
+    public float fadeDuration = 0.05f;
 
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb;
     private Vector3 originalPosition;
-    private bool isBroken = false; // Track whether the branch is broken
+    private bool isBroken = false;
 
     private void Start()
     {
@@ -21,11 +21,11 @@ public class BreakableBranch : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
 
-        originalPosition = transform.localPosition; // Save the original local position
+        originalPosition = transform.localPosition;
 
         if (branchBase != null)
         {
-            branchBase.SetActive(false); // Hide the base portion initially
+            branchBase.SetActive(false); 
         }
     }
 
@@ -43,7 +43,7 @@ public class BreakableBranch : MonoBehaviour
 
         if (branchBase != null)
         {
-            branchBase.SetActive(true); // Show the base portion
+            branchBase.SetActive(true); 
         }
 
         StartCoroutine(FallAndFadeOut());
@@ -73,8 +73,8 @@ public class BreakableBranch : MonoBehaviour
         transform.localPosition = fallPosition;
 
         spriteRenderer.enabled = false;
-        boxCollider.isTrigger = true; // Make the collider a trigger
-        rb.simulated = false; // Disable the Rigidbody2D
+        boxCollider.isTrigger = true;
+        rb.simulated = false; 
     }
 
     private IEnumerator RegenerateBranch()
@@ -83,7 +83,7 @@ public class BreakableBranch : MonoBehaviour
 
         if (branchBase != null)
         {
-            branchBase.SetActive(false); // Hide the base portion again
+            branchBase.SetActive(false); 
         }
 
         StartCoroutine(FadeIn());
@@ -92,10 +92,10 @@ public class BreakableBranch : MonoBehaviour
     private IEnumerator FadeIn()
     {
         spriteRenderer.enabled = true;
-        boxCollider.isTrigger = false; // Re-enable the collider as non-trigger
-        rb.simulated = true; // Re-enable the Rigidbody2D
+        boxCollider.isTrigger = false; 
+        rb.simulated = true; 
 
-        transform.localPosition = originalPosition; // Reset the position before fading in
+        transform.localPosition = originalPosition; 
 
         float elapsedTime = 0f;
         Color color = spriteRenderer.color;
