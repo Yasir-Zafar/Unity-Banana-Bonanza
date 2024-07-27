@@ -6,6 +6,8 @@ public class BallControl : MonoBehaviour
 {
     public float power = 7f;
     public float maxDrag = 2f;
+    public float maxForce = 10f;
+    public float maxLineHeight = 5f;
     public Rigidbody2D rb;
     public LineRenderer lr;
 
@@ -14,22 +16,25 @@ public class BallControl : MonoBehaviour
     private bool grounded;
     private bool onBranch;
     private Transform currentBranch;
+    private Camera mainCamera;
 
-private void Start() {
-    if (lr != null) {
-        Color startColor = lr.startColor;
-        Color endColor = lr.endColor;
-        startColor.a = 0.1f;
-        endColor.a = 0.1f;
-        lr.startColor = startColor;
-        lr.endColor = endColor;
+    private void Start() {
+        mainCamera = Camera.main;
+        
+        if (lr != null) {
+            Color startColor = lr.startColor;
+            Color endColor = lr.endColor;
+            startColor.a = 0.1f;
+            endColor.a = 0.1f;
+            lr.startColor = startColor;
+            lr.endColor = endColor;
 
-        lr.widthMultiplier = 0.5f;
-        lr.positionCount = 0;
-    } else {
-        Debug.LogWarning("LineRenderer is not assigned!");
+            lr.widthMultiplier = 0.5f;
+            lr.positionCount = 0;
+        } else {
+            Debug.LogWarning("LineRenderer is not assigned!");
+        }
     }
-}
 
     private void Update() {
         if ((grounded || onBranch) && Input.touchCount > 0) {
@@ -50,7 +55,7 @@ private void Start() {
     }
 
     void DragStart() {
-        dragStartPos = Camera.main.ScreenToWorldPoint(touch.position);
+        dragStartPos = mainCamera.ScreenToWorldPoint(touch.position);
         dragStartPos.z = 0f;
         lr.positionCount = 2;
         lr.SetPosition(0, transform.position); 
@@ -58,7 +63,7 @@ private void Start() {
     }
 
     void Dragging() {
-        Vector3 draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
+        Vector3 draggingPos = mainCamera.ScreenToWorldPoint(touch.position);
         draggingPos.z = 0f;
 
         Vector3 dragVector = draggingPos - dragStartPos;
@@ -73,11 +78,13 @@ private void Start() {
     void DragRelease() {
         lr.positionCount = 0;
 
-        Vector3 dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
+        Vector3 dragReleasePos = mainCamera.ScreenToWorldPoint(touch.position);
         dragReleasePos.z = 0f;
 
         Vector3 force = dragStartPos - dragReleasePos;
         Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * power;
+
+        clampedForce = Vector3.ClampMagnitude(clampedForce, maxForce);
 
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
         if (onBranch) {
@@ -85,6 +92,7 @@ private void Start() {
             currentBranch = null;
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collision with: " + collision.gameObject.name);
 
