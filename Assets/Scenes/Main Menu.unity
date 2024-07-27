@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 5a66eae74eb6b5f498d1fa1f6caa359f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1224,7 +1224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240.55003, y: -378.05}
+  m_AnchoredPosition: {x: -240.55003, y: -454}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1869983818
@@ -1586,15 +1586,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4465227495682088755, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.2000003
       objectReference: {fileID: 0}
     - target: {fileID: 4465227495682088755, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.2000003
       objectReference: {fileID: 0}
     - target: {fileID: 4465227495682088755, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.0666667
       objectReference: {fileID: 0}
     - target: {fileID: 4465227495682088755, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1630,7 +1630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4465227495682088755, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1670
+      value: 1731
       objectReference: {fileID: 0}
     - target: {fileID: 4465227495682088755, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1642,6 +1642,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4465227495682088755, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465227495682088755, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4545842557790029335, guid: c6da93a4c99297b40b55ff68c1c7bdcb, type: 3}
