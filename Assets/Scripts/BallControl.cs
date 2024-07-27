@@ -5,8 +5,8 @@ using UnityEngine;
 public class BallControl : MonoBehaviour
 {
     public float power = 7f;
-    public float maxDrag = 2f;
-    public float maxForce = 10f;
+    public float sensitivity = 2f;
+    public float maxForce = 15f;
     public float maxLineHeight = 5f;
     public Rigidbody2D rb;
     public LineRenderer lr;
@@ -19,7 +19,7 @@ public class BallControl : MonoBehaviour
     private Camera mainCamera;
 
     private void Start() {
-        mainCamera = Camera.main;
+        mainCamera = Camera.main; // Cache the Camera.main reference
         
         if (lr != null) {
             Color startColor = lr.startColor;
@@ -67,12 +67,12 @@ public class BallControl : MonoBehaviour
         draggingPos.z = 0f;
 
         Vector3 dragVector = draggingPos - dragStartPos;
-        if (dragVector.magnitude > maxDrag) {
-            draggingPos = dragStartPos + dragVector.normalized * maxDrag;
-        }
+        
+        Vector3 endPos = transform.position - dragVector;
+        endPos.y = Mathf.Clamp(endPos.y, transform.position.y, transform.position.y + maxLineHeight);
 
         lr.SetPosition(0, transform.position); 
-        lr.SetPosition(1, transform.position - dragVector);
+        lr.SetPosition(1, endPos);
     }
 
     void DragRelease() {
@@ -82,8 +82,9 @@ public class BallControl : MonoBehaviour
         dragReleasePos.z = 0f;
 
         Vector3 force = dragStartPos - dragReleasePos;
-        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * power;
+        Vector3 clampedForce = Vector3.ClampMagnitude(force, sensitivity) * power;
 
+        // Apply hard limit to the final force
         clampedForce = Vector3.ClampMagnitude(clampedForce, maxForce);
 
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
@@ -127,7 +128,7 @@ public class BallControl : MonoBehaviour
         Vector3 branchCenter = currentBranch.position;
 
         Vector3 ballPosition = branchCenter;
-        ballPosition.y += (transform.localScale.y / 2);
+        ballPosition.y += (transform.localScale.y / 2); // Adjust as necessary
 
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;

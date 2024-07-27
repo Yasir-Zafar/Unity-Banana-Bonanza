@@ -848,8 +848,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb529ac7fd8249a14968e13e395376d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 7
-  maxDrag: 2
+  power: 5
+  sensitivity: 2.4
+  maxForce: 11.4
+  maxLineHeight: 2.4
   rb: {fileID: 1070123576}
   lr: {fileID: 1070123581}
 --- !u!120 &1070123581
