@@ -377,6 +377,8 @@ MonoBehaviour:
   boundaryPadding: 1
   minBounds: {x: 0, y: 0}
   maxBounds: {x: 0, y: 0}
+  initialWaitTime: 2
+  cinematicSpeed: 2
 --- !u!81 &237400998
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2097,7 +2099,7 @@ MonoBehaviour:
   power: 5
   sensitivity: 2.4
   maxForce: 12
-  maxLineHeight: 2.9
+  maxLineHeight: 2.5
   maxLineWidth: 2.5
   glideSpeed: 5
   rb: {fileID: 1500059669}

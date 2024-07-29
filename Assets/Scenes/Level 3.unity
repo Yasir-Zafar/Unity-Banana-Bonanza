@@ -262,8 +262,8 @@ MonoBehaviour:
   power: 5
   sensitivity: 2.4
   maxForce: 12
-  maxLineHeight: 2.4
-  maxLineWidth: 3
+  maxLineHeight: 2.9
+  maxLineWidth: 2.5
   glideSpeed: 5
   rb: {fileID: 434837345}
   lr: {fileID: 434837344}
@@ -1721,8 +1721,10 @@ MonoBehaviour:
   ceiling: {fileID: 1650811633}
   floor: {fileID: 1894599415}
   boundaryPadding: 1
-  minBounds: {x: 0, y: 0}
+  minBounds: {x: 0, y: -4}
   maxBounds: {x: 0, y: 0}
+  initialWaitTime: 2
+  cinematicSpeed: 2
 --- !u!1 &1592368756
 GameObject:
   m_ObjectHideFlags: 0

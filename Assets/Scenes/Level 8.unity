@@ -411,6 +411,9 @@ MonoBehaviour:
   boundaryPadding: 1
   minBounds: {x: 0, y: 0}
   maxBounds: {x: 0, y: 0}
+  initialWaitTime: 2
+  cinematicSpeed: 1.5
+  cinematicSmoothness: 1
 --- !u!81 &237400998
 AudioListener:
   m_ObjectHideFlags: 0

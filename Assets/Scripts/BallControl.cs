@@ -13,6 +13,8 @@ public class BallControl : MonoBehaviour
     public Rigidbody2D rb;
     public LineRenderer lr;
 
+    public static bool touchControlsEnabled = true; 
+
     Vector3 dragStartPos;
     Touch touch;
     private bool grounded;
@@ -39,7 +41,7 @@ public class BallControl : MonoBehaviour
     }
 
     private void Update() {
-        if ((grounded || onBranch) && Input.touchCount > 0) {
+        if ((touchControlsEnabled && (grounded || onBranch)) && Input.touchCount > 0) {
             touch = Input.GetTouch(0);
 
             if (touch.phase == TouchPhase.Began) {
