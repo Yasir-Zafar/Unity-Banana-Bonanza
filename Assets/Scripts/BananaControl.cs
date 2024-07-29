@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +20,9 @@ public class BananaControl : MonoBehaviour
             animatorF.Play(animationNameF);
             animatorSF.Play(animationNameSF);
             animatorBG.Play(animationNameBG);
+
+            collision.gameObject.SetActive(false);
+
             EndGame();
         }
     }
@@ -29,10 +31,12 @@ public class BananaControl : MonoBehaviour
     {
         StartCoroutine(LoadLevelAfterDelay());
     }
+
     private IEnumerator LoadLevelAfterDelay()
     {
+        yield return new WaitForSeconds(delay);
+        
         SceneController sceneController = FindObjectOfType<SceneController>();
-        yield return new WaitForSeconds(delay); //delay
         if (sceneController != null)
         {
             sceneController.LoadNextLevel();

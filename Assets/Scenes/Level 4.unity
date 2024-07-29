@@ -378,7 +378,7 @@ MonoBehaviour:
   minBounds: {x: 0, y: 0}
   maxBounds: {x: 0, y: 0}
   initialWaitTime: 2
-  cinematicSpeed: 2
+  cinematicSpeed: 2.5
 --- !u!81 &237400998
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2104,6 +2104,7 @@ MonoBehaviour:
   glideSpeed: 5
   rb: {fileID: 1500059669}
   lr: {fileID: 1500059668}
+  totalSwipes: 0
 --- !u!120 &1500059668
 LineRenderer:
   serializedVersion: 2

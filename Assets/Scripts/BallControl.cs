@@ -69,6 +69,8 @@ public class BallControl : MonoBehaviour
     }
 
     void Dragging() {
+        if (lr == null || lr.positionCount < 2) return;
+
         Vector3 draggingPos = mainCamera.ScreenToWorldPoint(touch.position);
         draggingPos.z = 0f;
 
@@ -119,14 +121,50 @@ public class BallControl : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Branch")) {
+            if (rb.velocity.magnitude < 0.1f && rb.angularVelocity < 0.1f) {
+                onBranch = true;
+                currentBranch = collision.transform;
+                rb.velocity = Vector2.zero;
+                rb.angularVelocity = 0f;
+            }
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             grounded = false;
             Debug.Log("Ball left the ground.");
         } else if (collision.gameObject.CompareTag("Branch")) {
+            StartCoroutine(CheckBranchContact());
+            Debug.Log("Ball might have left the branch.");
+        }
+    }
+
+    private IEnumerator CheckBranchContact() {
+        yield return new WaitForFixedUpdate();
+
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
+        bool stillOnBranch = false;
+
+        foreach (Collider2D hitCollider in hitColliders) {
+            if (hitCollider.CompareTag("Branch")) {
+                stillOnBranch = true;
+                currentBranch = hitCollider.transform;
+
+                if (rb.velocity.magnitude < 0.1f && rb.angularVelocity < 0.1f) {
+                    rb.velocity = Vector2.zero;
+                    rb.angularVelocity = 0f;
+                }
+
+                break;
+            }
+        }
+
+        if (!stillOnBranch) {
             onBranch = false;
             currentBranch = null;
-            Debug.Log("Ball left the branch.");
         }
     }
 

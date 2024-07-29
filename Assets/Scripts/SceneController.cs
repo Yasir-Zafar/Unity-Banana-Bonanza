@@ -11,7 +11,7 @@ public class SceneController : MonoBehaviour
 
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            CameraFollow.ResetCinematic();
+            PersistentManager.Instance.IsRestarting = false;
             StartCoroutine(LoadSceneAsync(nextSceneIndex));
         }
         else
@@ -22,6 +22,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadLevel(string sceneName)
     {
+        PersistentManager.Instance.IsRestarting = false;
         StartCoroutine(LoadSceneAsync(sceneName));
     }
 

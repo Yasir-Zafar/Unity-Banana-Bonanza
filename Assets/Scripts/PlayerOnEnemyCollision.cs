@@ -14,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
 
     private void RestartLevel()
     {
-        CameraFollow.ResetCinematic(); 
+        PersistentManager.Instance.IsRestarting = true;
         StartCoroutine(LoadSceneAsync(SceneManager.GetActiveScene().name));
     }
 
