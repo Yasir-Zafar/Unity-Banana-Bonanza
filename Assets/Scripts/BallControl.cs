@@ -8,6 +8,7 @@ public class BallControl : MonoBehaviour
     public float sensitivity = 2f;
     public float maxForce = 15f;
     public float maxLineHeight = 5f;
+    public float maxLineWidth = 3f;
     public float glideSpeed = 5f;
     public Rigidbody2D rb;
     public LineRenderer lr;
@@ -70,9 +71,8 @@ public class BallControl : MonoBehaviour
         Vector3 dragVector = draggingPos - dragStartPos;
 
         Vector3 endPos = transform.position - dragVector;
-        endPos.x = Mathf.Clamp(endPos.x, transform.position.x, transform.position.x + maxLineHeight - 2 );
-        endPos.y = Mathf.Clamp(endPos.y, transform.position.y, transform.position.y + maxLineHeight );
-        endPos.z = Mathf.Clamp(endPos.z, transform.position.z, transform.position.z + maxLineHeight - 1);
+        endPos.x = Mathf.Clamp(endPos.x, transform.position.x - maxLineWidth, transform.position.x + maxLineWidth);
+        endPos.y = Mathf.Clamp(endPos.y, transform.position.y, transform.position.y + maxLineHeight);
 
         lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, endPos);

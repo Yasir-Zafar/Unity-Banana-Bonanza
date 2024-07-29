@@ -1729,7 +1729,8 @@ MonoBehaviour:
   power: 5
   sensitivity: 2.4
   maxForce: 12
-  maxLineHeight: 2.4
+  maxLineHeight: 2.9
+  maxLineWidth: 2.5
   glideSpeed: 5
   rb: {fileID: 1500059669}
   lr: {fileID: 1500059668}
