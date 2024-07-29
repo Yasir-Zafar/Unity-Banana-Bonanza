@@ -30,8 +30,8 @@ public class CameraFollow : MonoBehaviour
         startingPosition = transform.position;
 
         if (!hasPlayedCinematic) {
-            StartCoroutine(CinematicSequence());
             hasPlayedCinematic = true;
+            StartCoroutine(CinematicSequence());
         }
     }
 

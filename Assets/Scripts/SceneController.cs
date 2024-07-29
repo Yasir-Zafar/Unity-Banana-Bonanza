@@ -22,7 +22,6 @@ public class SceneController : MonoBehaviour
 
     public void LoadLevel(string sceneName)
     {
-        CameraFollow.ResetCinematic();
         StartCoroutine(LoadSceneAsync(sceneName));
     }
 
