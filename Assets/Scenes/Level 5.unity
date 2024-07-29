@@ -503,11 +503,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 3
-  animatorF: {fileID: 0}
+  animatorF: {fileID: 722997322}
   animationNameF: BananaFSpawn
-  animatorSF: {fileID: 0}
+  animatorSF: {fileID: 1067162111}
   animationNameSF: BananaSFSpawn
-  animatorBG: {fileID: 0}
+  animatorBG: {fileID: 978262444}
   animationNameBG: BananaBGSpawn
 --- !u!50 &298970789
 Rigidbody2D:
