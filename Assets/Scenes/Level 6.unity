@@ -612,6 +612,8 @@ MonoBehaviour:
   boundaryPadding: 1
   minBounds: {x: 0, y: 0}
   maxBounds: {x: 0, y: 0}
+  initialWaitTime: 2
+  cinematicSpeed: 2
 --- !u!81 &237400998
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1594,13 +1596,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545620926}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.48, z: 0.08588396}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.7476037, y: 11.89214, z: 0.085269794}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1575247683}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1334550895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &545620930
 MonoBehaviour:
@@ -2749,6 +2751,7 @@ Transform:
   m_Children:
   - {fileID: 869258434}
   - {fileID: 1501045747}
+  - {fileID: 545620929}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356700727
@@ -3804,11 +3807,10 @@ SpriteRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1500059672}
-  - {fileID: 298970792}
-  - {fileID: 1605700579}
   - {fileID: 237401000}
-  - {fileID: 2099285299}
-  - {fileID: 545620929}
-  - {fileID: 345126868}
+  - {fileID: 298970792}
+  - {fileID: 1500059672}
+  - {fileID: 1605700579}
   - {fileID: 1334550895}
+  - {fileID: 345126868}
+  - {fileID: 2099285299}

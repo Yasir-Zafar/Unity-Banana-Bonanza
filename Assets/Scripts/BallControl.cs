@@ -22,6 +22,8 @@ public class BallControl : MonoBehaviour
     private Transform currentBranch;
     private Camera mainCamera;
 
+    public int totalSwipes = 0;
+
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
         
@@ -96,6 +98,8 @@ public class BallControl : MonoBehaviour
             onBranch = false;
             currentBranch = null;
         }
+
+        totalSwipes++;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

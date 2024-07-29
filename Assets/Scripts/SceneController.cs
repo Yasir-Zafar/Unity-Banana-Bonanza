@@ -11,6 +11,7 @@ public class SceneController : MonoBehaviour
 
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
+            CameraFollow.ResetCinematic();
             StartCoroutine(LoadSceneAsync(nextSceneIndex));
         }
         else
