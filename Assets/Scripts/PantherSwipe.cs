@@ -3,12 +3,13 @@ using System.Collections;
 
 public class PantherSwipe : MonoBehaviour
 {
-    public Transform swipeArcParent; 
-    public GameObject swipeArc; 
+    public Transform swipeArcParent;
+    public GameObject swipeArc;
     public float swipeAngle = 30f;
-    public float swipeSpeed = 2f; 
-    public float swipeInterval = 1f; 
-    public float visibilityDuration = 0.1f; 
+    public float swipeSpeed = 2f;
+    public float swipeInterval = 1f;
+    public float visibilityDuration = 0.1f;
+    public bool swipeFromTopToBottom = true; 
 
     private bool isSwiping = false;
     private float startAngle;
@@ -20,8 +21,16 @@ public class PantherSwipe : MonoBehaviour
 
     private void Start()
     {
-        startAngle = -swipeAngle / 2;
-        endAngle = swipeAngle / 2;
+        if (swipeFromTopToBottom)
+        {
+            startAngle = -swipeAngle / 2;
+            endAngle = swipeAngle / 2;
+        }
+        else
+        {
+            startAngle = swipeAngle / 2;
+            endAngle = -swipeAngle / 2;
+        }
 
         swipeArcLineRenderer = swipeArc.GetComponent<LineRenderer>();
         swipeArcSpriteRenderer = swipeArc.GetComponent<SpriteRenderer>();
@@ -44,13 +53,13 @@ public class PantherSwipe : MonoBehaviour
             if (!isSwiping)
             {
                 SetSwipeArcVisibility(true);
-                
+
                 yield return new WaitForSeconds(visibilityDuration);
-                
+
                 yield return StartCoroutine(Swipe());
 
                 SetSwipeArcVisibility(false);
-            }      
+            }
             yield return new WaitForSeconds(swipeInterval);
         }
     }
@@ -60,9 +69,9 @@ public class PantherSwipe : MonoBehaviour
         isSwiping = true;
         currentAngle = startAngle;
 
-        while (currentAngle < endAngle)
+        while (swipeFromTopToBottom ? currentAngle < endAngle : currentAngle > endAngle)
         {
-            currentAngle += Time.deltaTime * swipeSpeed * swipeAngle;
+            currentAngle += swipeFromTopToBottom ? Time.deltaTime * swipeSpeed * swipeAngle : -Time.deltaTime * swipeSpeed * swipeAngle;
             swipeArcParent.localRotation = Quaternion.Euler(0f, 0f, currentAngle);
             yield return null;
         }

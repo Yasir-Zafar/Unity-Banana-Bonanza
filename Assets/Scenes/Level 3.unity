@@ -263,6 +263,7 @@ MonoBehaviour:
   sensitivity: 2.4
   maxForce: 12
   maxLineHeight: 2.4
+  maxLineWidth: 3
   glideSpeed: 5
   rb: {fileID: 434837345}
   lr: {fileID: 434837344}
@@ -500,7 +501,7 @@ Transform:
   m_GameObject: {fileID: 434837342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: -4.36, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2469,9 +2470,9 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1582026447}
   - {fileID: 1355842678}
   - {fileID: 434837348}
-  - {fileID: 1582026447}
   - {fileID: 1934763045}
   - {fileID: 242242687}
   - {fileID: 1547106065}
