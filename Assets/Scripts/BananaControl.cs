@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class BananaControl : MonoBehaviour
 {
-    public float delay = 12.0f;
 
     public Animator StarAnimator;           // The Animator component
     public Animator LevelSelectAnimator;
@@ -30,31 +29,6 @@ public class BananaControl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-<<<<<<< Updated upstream
-            animatorF.Play(animationNameF);
-            animatorSF.Play(animationNameSF);
-            animatorBG.Play(animationNameBG);
-
-            collision.gameObject.SetActive(false);
-
-            EndGame();
-        }
-    }
-
-    private void EndGame()
-    {
-        StartCoroutine(LoadLevelAfterDelay());
-    }
-
-    private IEnumerator LoadLevelAfterDelay()
-    {
-        yield return new WaitForSeconds(delay);
-        
-        SceneController sceneController = FindObjectOfType<SceneController>();
-        if (sceneController != null)
-        {
-            sceneController.LoadNextLevel();
-=======
             StarAnimator.Play("StarsSpawn");
 
             Home.gameObject.SetActive(true);
@@ -68,7 +42,8 @@ public class BananaControl : MonoBehaviour
 
             Next.gameObject.SetActive(true);
             NextAnimator.Play("NextSpawn");
->>>>>>> Stashed changes
+
+            collision.gameObject.SetActive(false);
         }
     }
 }
