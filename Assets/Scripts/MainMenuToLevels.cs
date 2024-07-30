@@ -46,6 +46,6 @@ public class MainMenuToLevels : MonoBehaviour
     private IEnumerator LoadLevelAfterDelay()
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Level 1"); // Replace "Level1" with the exact name of your level 1 scene
+        SceneManager.LoadScene("Level 2"); // Replace "Level1" with the exact name of your level 1 scene
     }
 }
