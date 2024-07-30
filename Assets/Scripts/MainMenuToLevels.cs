@@ -17,7 +17,7 @@ public class MainMenuToLevels : MonoBehaviour
 
     void Start()
     {
-        // Ensure the button and animator are set
+        // Ensure the button and HomeAnimator are set
         if (playButton == null || animatorF == null || animatorSF == null || animatorBG == null)
         {
             return;
