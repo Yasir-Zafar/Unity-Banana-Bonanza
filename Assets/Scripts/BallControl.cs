@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallControl : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class BallControl : MonoBehaviour
     private Camera mainCamera;
 
     public int totalSwipes = 0;
+    public Text swipeDisplay;
 
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
@@ -102,6 +105,7 @@ public class BallControl : MonoBehaviour
         }
 
         totalSwipes++;
+        swipeDisplay.text = totalSwipes.ToString();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

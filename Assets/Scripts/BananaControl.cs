@@ -8,18 +8,15 @@ public class BananaControl : MonoBehaviour
 
     public Animator StarAnimator;           // The Animator component
     public Animator LevelSelectAnimator;
-    public Animator HomeAnimator;
     public Animator RetryAnimator;
     public Animator NextAnimator;
 
-    public Button Home;
     public Button LevelSelect;
     public Button Retry;
     public Button Next;
 
     void Start()
     {
-        Home.gameObject.SetActive(false);
         LevelSelect.gameObject.SetActive(false);
         Retry.gameObject.SetActive(false);
         Next.gameObject.SetActive(false);
@@ -30,9 +27,6 @@ public class BananaControl : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             StarAnimator.Play("StarsSpawn");
-
-            Home.gameObject.SetActive(true);
-            HomeAnimator.Play("HomeSpawn");
 
             LevelSelect.gameObject.SetActive(true);
             LevelSelectAnimator.Play("LevelSelectSpawn");
