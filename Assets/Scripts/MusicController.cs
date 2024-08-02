@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MusicController : MonoBehaviour
 {
     public AudioSource audioSource; // Reference to the AudioSource
-    public Button MusicButton; // Reference to the UI Button
+    public Button MusicButton; // Reference to the UI button
     private bool isPlaying = true; // To keep track of the audio state
 
     void Start()

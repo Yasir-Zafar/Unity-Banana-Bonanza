@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenuToLevels : MonoBehaviour
 {
-    public float delay = 10.0f;
+    public float delay;
 
     public Button playButton;         // The button that will be pressed
     public Animator animatorF;     // The Animator component
@@ -36,7 +36,7 @@ public class MainMenuToLevels : MonoBehaviour
         animatorBG.Play(animationNameBG);
     }
 
-    // This function should be called when the "Play Button" is pressed
+    // This function should be called when the "Play button" is pressed
     public void LoadLevel1WithDelay()
     {
         StartCoroutine(LoadLevelAfterDelay());
@@ -46,6 +46,6 @@ public class MainMenuToLevels : MonoBehaviour
     private IEnumerator LoadLevelAfterDelay()
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Level 1"); // Replace "Level1" with the exact name of your level 1 scene
+        SceneManager.LoadScene("Level Select");
     }
 }
