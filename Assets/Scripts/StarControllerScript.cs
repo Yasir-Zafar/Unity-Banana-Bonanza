@@ -21,11 +21,34 @@ public class StarControllerScript : MonoBehaviour
 
     public Text swipes;
 
+    public int starsCount;
+    public int levelIndex;
+
+    void Start()
+    {
+        starsCount = 0;
+    }
+
     void Update()
     {
         updateL();
         updateM();
         updateR();
+
+        if (R.texture == RY)
+        {
+            starsCount = 3;
+        }
+        else if (M.texture == MY)
+        {
+            starsCount = 2;
+        }
+        else if(L.texture == LY)
+        {
+            starsCount = 1;
+        }
+
+        GameManager.Instance.SaveStars(levelIndex, starsCount);
     }
 
     //1st star

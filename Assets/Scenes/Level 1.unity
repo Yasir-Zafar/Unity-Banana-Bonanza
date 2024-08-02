@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 378454700}
   - component: {fileID: 378454699}
   - component: {fileID: 378454698}
+  - component: {fileID: 378454703}
   m_Layer: 5
   m_Name: LevelSelectButton
   m_TagString: Untagged
@@ -545,7 +546,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 378454701}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 378454703}
+        m_TargetAssemblyTypeName: LevelSelectButton, Assembly-CSharp
+        m_MethodName: toLvls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &378454701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +597,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378454696}
   m_CullTransparentMesh: 1
+--- !u!114 &378454703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378454696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3930e6a0c19574f8dd816314aa7038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &383405510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1540,7 @@ MonoBehaviour:
   rb: {fileID: 1070123576}
   lr: {fileID: 1070123581}
   totalSwipes: 0
-  swipeDisplay: {fileID: 0}
+  swipeDisplay: {fileID: 290822757}
 --- !u!120 &1070123581
 LineRenderer:
   serializedVersion: 2
@@ -2353,9 +2378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8e19c6b6d045e4b9023910b4c00dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  L: {fileID: 0}
-  M: {fileID: 0}
-  R: {fileID: 0}
+  L: {fileID: 1396483727}
+  M: {fileID: 1302607212}
+  R: {fileID: 1383991748}
   LN: {fileID: 2800000, guid: 67f6339ae172c3f42a30206263d733e9, type: 3}
   MN: {fileID: 2800000, guid: 7e0bee44e06f7a147861bac948237cc8, type: 3}
   RN: {fileID: 2800000, guid: 435900434345fbb49baecde88e49b70e, type: 3}
@@ -2364,7 +2389,9 @@ MonoBehaviour:
   RY: {fileID: 2800000, guid: b0b008e7e4b73ff449790032a20393c8, type: 3}
   M_Limit: 5
   R_Limit: 3
-  swipes: {fileID: 0}
+  swipes: {fileID: 290822757}
+  starsCount: 0
+  levelIndex: 0
 --- !u!4 &1408305289
 Transform:
   m_ObjectHideFlags: 0
@@ -2619,13 +2646,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1688143d86fc57f6bbd153422f4cc975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StarAnimator: {fileID: 0}
-  LevelSelectAnimator: {fileID: 0}
-  RetryAnimator: {fileID: 0}
-  NextAnimator: {fileID: 0}
-  LevelSelect: {fileID: 0}
-  Retry: {fileID: 0}
-  Next: {fileID: 0}
+  StarAnimator: {fileID: 868722114}
+  LevelSelectAnimator: {fileID: 378454699}
+  RetryAnimator: {fileID: 421586130}
+  NextAnimator: {fileID: 1969050392}
+  LevelSelect: {fileID: 378454700}
+  Retry: {fileID: 421586131}
+  Next: {fileID: 1969050393}
 --- !u!1 &1920904870
 GameObject:
   m_ObjectHideFlags: 0

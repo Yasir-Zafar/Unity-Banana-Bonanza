@@ -5356,6 +5356,8 @@ MonoBehaviour:
   M_Limit: 11
   R_Limit: 8
   swipes: {fileID: 88104255}
+  starsCount: 0
+  levelIndex: 10
 --- !u!4 &1894992890
 Transform:
   m_ObjectHideFlags: 0
