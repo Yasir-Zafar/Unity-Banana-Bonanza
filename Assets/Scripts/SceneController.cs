@@ -4,6 +4,11 @@ using System.Collections;
 
 public class SceneController : MonoBehaviour
 {
+    private void Start()
+    {
+        GemManager.Instance.ResetGemCount();
+    }
+    
     public void LoadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

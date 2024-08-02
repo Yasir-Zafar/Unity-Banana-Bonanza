@@ -8,6 +8,7 @@ TagManager:
   - Branch
   - Banana
   - Enemy
+  - Gem
   layers:
   - Default
   - TransparentFX
