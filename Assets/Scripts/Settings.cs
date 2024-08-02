@@ -3,22 +3,27 @@ using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
 {
-    public Button toggleButton; // Reference to the button to be toggled
+    public Button MusicButton;
+    public Button FactoryResetButton;
 
-    private bool isToggleButtonActive = false;
+    private bool isMusicButtonActive = false;
+    private bool isFactoryResetActive = false;
 
     void Start()
     {
-        // Ensure the MusicButton starts as inactive
-        toggleButton.gameObject.SetActive(false);
+        MusicButton.gameObject.SetActive(false);
+        FactoryResetButton.gameObject.SetActive(false);
     }
 
     public void ToggleButton()
     {
-        isToggleButtonActive = !isToggleButtonActive;
+        isMusicButtonActive = !isMusicButtonActive;
+        isFactoryResetActive = !isFactoryResetActive;
 
-        // Set the active state of the MusicButton and its interactable state
-        toggleButton.gameObject.SetActive(isToggleButtonActive);
-        toggleButton.interactable = isToggleButtonActive;
+        MusicButton.gameObject.SetActive(isMusicButtonActive);
+        MusicButton.interactable = isMusicButtonActive;
+
+        FactoryResetButton.gameObject.SetActive(isFactoryResetActive);
+        FactoryResetButton.interactable = isFactoryResetActive;
     }
 }
