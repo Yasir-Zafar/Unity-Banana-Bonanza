@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Banana-Bonanza.sln"
+    "dotnet.defaultSolution": "Unity-Banana-Bonanza.sln"
 }
