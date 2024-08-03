@@ -24,9 +24,6 @@ public class BallControl : MonoBehaviour
     private Transform currentBranch;
     private Camera mainCamera;
 
-    public int totalSwipes = 0;
-    public Text swipeDisplay;
-
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
         
@@ -103,9 +100,6 @@ public class BallControl : MonoBehaviour
             onBranch = false;
             currentBranch = null;
         }
-
-        totalSwipes++;
-        swipeDisplay.text = totalSwipes.ToString();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

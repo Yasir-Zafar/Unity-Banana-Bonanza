@@ -3,8 +3,9 @@ using UnityEngine;
 public class GemManager : MonoBehaviour
 {
     public static GemManager Instance { get; private set; }
-    private int totalGems;
-
+    private float totalGems;
+    public AudioClip GemCollected;
+    private AudioSource audioSource;
     private void Awake()
     {
         if (Instance == null)
@@ -20,6 +21,9 @@ public class GemManager : MonoBehaviour
 
     public void CollectGem()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = GemCollected;
+        audioSource.Play();
         totalGems++;
         Debug.Log("Total Gems Collected: " + totalGems);
     }
@@ -29,7 +33,7 @@ public class GemManager : MonoBehaviour
         totalGems = 0;
     }
 
-    public int GetTotalGems()
+    public float GetTotalGems()
     {
         return totalGems;
     }

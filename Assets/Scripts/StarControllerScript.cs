@@ -16,13 +16,9 @@ public class StarControllerScript : MonoBehaviour
     public Texture MY;
     public Texture RY;
 
-    public int M_Limit;
-    public int R_Limit;
-
-    public Text swipes;
-
     public int starsCount;
     public int levelIndex;
+    public float maxGems;
 
     void Start()
     {
@@ -60,7 +56,7 @@ public class StarControllerScript : MonoBehaviour
     //2nd star
     void updateM()
     {
-        if (int.Parse(swipes.text) < M_Limit)
+        if (GemManager.Instance.GetTotalGems() >= (maxGems/(2.0f)))
         {
             M.texture = MY;
         }
@@ -73,7 +69,7 @@ public class StarControllerScript : MonoBehaviour
     //3rd star
     void updateR()
     {
-        if (int.Parse(swipes.text) < R_Limit)
+        if (GemManager.Instance.GetTotalGems() == maxGems)
         {
             R.texture = RY;
         }
