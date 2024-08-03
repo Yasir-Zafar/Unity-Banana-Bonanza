@@ -506,6 +506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3930e6a0c19574f8dd816314aa7038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 3
+  BananaBG: {fileID: 494042994}
+  BananaSF: {fileID: 269018538}
+  BananaF: {fileID: 1695812177}
 --- !u!114 &286824928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +591,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 286824927}
         m_TargetAssemblyTypeName: LevelSelectButton, Assembly-CSharp
-        m_MethodName: toLvls
+        m_MethodName: toLvlsWithDelay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1205,6 +1209,7 @@ GameObject:
   - component: {fileID: 663374572}
   - component: {fileID: 663374571}
   - component: {fileID: 663374570}
+  - component: {fileID: 663374575}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Banana
@@ -1231,6 +1236,7 @@ MonoBehaviour:
   LevelSelect: {fileID: 286824930}
   Retry: {fileID: 1130572651}
   Next: {fileID: 336712100}
+  yayyy: {fileID: 8300000, guid: 37d5fcd0435f8734498be2aee25731f3, type: 3}
 --- !u!50 &663374571
 Rigidbody2D:
   serializedVersion: 4
@@ -1370,6 +1376,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &663374575
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663374569}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &690065074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,7 +2594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daabb3fa79861a41d87a1b4f65cacad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSound: {fileID: 8300000, guid: d36601c3a6c6ac6b4ad379151a1966c6, type: 3}
 --- !u!70 &1404701123
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

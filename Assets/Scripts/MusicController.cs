@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class MusicController : MonoBehaviour
 {
-    public AudioSource audioSource; // Reference to the AudioSource
     public Button MusicButton; // Reference to the UI button
     private bool isPlaying = true; // To keep track of the audio state
 
     void Start()
     {
         // Ensure the button and audio source are assigned
-        if (MusicButton != null && audioSource != null)
+        if (MusicButton != null)
         {
             // Add a listener to the button to call the ToggleAudio method when clicked
             MusicButton.onClick.AddListener(ToggleAudio);
@@ -23,11 +22,13 @@ public class MusicController : MonoBehaviour
     {
         if (isPlaying)
         {
-            audioSource.Pause();
+            AudioManager.Instance.play = false;
+            AudioManager.Instance.audioSource.Pause();
         }
         else
         {
-            audioSource.Play();
+            AudioManager.Instance.play = true;
+            AudioManager.Instance.audioSource.Play();
         }
         isPlaying = !isPlaying;
     }

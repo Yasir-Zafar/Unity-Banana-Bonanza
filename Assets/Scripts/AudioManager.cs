@@ -10,8 +10,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip Welcome;
     public AudioClip LevelsInGame;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     private int lastSceneIndex;
+    public bool play;
+
+    MusicController musicController;
 
     private void Awake()
     {
@@ -56,7 +59,7 @@ public class AudioManager : MonoBehaviour
     {
         if (sceneIndex == 0 || sceneIndex == 10)
         {
-            if (audioSource.clip != Welcome)
+            if (audioSource.clip != Welcome && play == true)
             {
                 audioSource.clip = Welcome;
                 audioSource.Play();
@@ -64,7 +67,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (sceneIndex >= 1 && sceneIndex <= 9)
         {
-            if (audioSource.clip != LevelsInGame)
+            if (audioSource.clip != LevelsInGame && play == true)
             {
                 audioSource.clip = LevelsInGame;
                 audioSource.Play();

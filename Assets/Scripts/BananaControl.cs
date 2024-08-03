@@ -15,17 +15,26 @@ public class BananaControl : MonoBehaviour
     public Button Retry;
     public Button Next;
 
+    private AudioSource audioSource;
+    public AudioClip yayyy;
+
     void Start()
     {
         LevelSelect.gameObject.SetActive(false);
         Retry.gameObject.SetActive(false);
         Next.gameObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            audioSource.clip = yayyy;
+            if (AudioManager.Instance.play == true)
+            {
+                audioSource.Play();
+            }
             StarAnimator.Play("StarsSpawn");
 
             LevelSelect.gameObject.SetActive(true);

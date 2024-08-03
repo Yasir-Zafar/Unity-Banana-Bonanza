@@ -23,7 +23,10 @@ public class GemManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = GemCollected;
-        audioSource.Play();
+        if (AudioManager.Instance.play == true)
+        {
+            audioSource.Play();
+        }
         totalGems++;
         Debug.Log("Total Gems Collected: " + totalGems);
     }
