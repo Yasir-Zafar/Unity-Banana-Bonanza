@@ -25,9 +25,15 @@ public class BallControl : MonoBehaviour
     private Transform currentBranch;
     private Camera mainCamera;
 
+    public float lineStartWidth = 0.05f;
+    public float lineEndWidth = 1.0f;
+
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
-        animator = GetComponent<Animator>(); // Get the Animator component
+        animator = GetComponent<Animator>(); 
+
+        lr.startWidth = lineStartWidth;
+        lr.endWidth = lineEndWidth;
         
         if (lr != null) {
             Color startColor = lr.startColor;
@@ -37,7 +43,7 @@ public class BallControl : MonoBehaviour
             lr.startColor = startColor;
             lr.endColor = endColor;
 
-            lr.widthMultiplier = 0.5f;
+            lr.widthMultiplier = 0.6f;
             lr.positionCount = 0;
         } else {
             Debug.LogWarning("LineRenderer is not assigned!");
@@ -117,7 +123,7 @@ public class BallControl : MonoBehaviour
         {
             grounded = true;
             Debug.Log("Ball is grounded.");
-            animator.SetBool("isJumping", false); // Stop jump animation
+            animator.SetBool("isJumping", false); 
         } 
         else if (collision.gameObject.CompareTag("Branch")) 
         {
@@ -125,7 +131,7 @@ public class BallControl : MonoBehaviour
             currentBranch = collision.transform;
             StartCoroutine(GlideToBranchCenter(collision.contacts[0].point));
             Debug.Log("Ball is on a branch.");
-            animator.SetBool("isJumping", false); // Stop jump animation
+            animator.SetBool("isJumping", false); 
         }
     }
 
