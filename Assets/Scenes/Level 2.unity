@@ -3016,25 +3016,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Branch_Left_1
       objectReference: {fileID: 0}
-    - target: {fileID: 4340141643212623367, guid: 1fd6c2f087e3d3cfd9abc21673e178eb, type: 3}
-      propertyPath: m_Size.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4340141643212623367, guid: 1fd6c2f087e3d3cfd9abc21673e178eb, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4340141643212623367, guid: 1fd6c2f087e3d3cfd9abc21673e178eb, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4340141643212623367, guid: 1fd6c2f087e3d3cfd9abc21673e178eb, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 5214136668018032787, guid: 1fd6c2f087e3d3cfd9abc21673e178eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 5214136668018032787, guid: 1fd6c2f087e3d3cfd9abc21673e178eb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3071,10 +3055,6 @@ PrefabInstance:
     - target: {fileID: 5214136668018032787, guid: 1fd6c2f087e3d3cfd9abc21673e178eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6226513756865551939, guid: 1fd6c2f087e3d3cfd9abc21673e178eb, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
