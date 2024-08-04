@@ -10,10 +10,11 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Collided with Enemy!"); // Add this line
-            RestartLevel();
+            RestartLevel();     //shall be replaced later
         }
     }
 
+    //this will be nuked later
     private void RestartLevel()
     {
         PersistentManager.Instance.IsRestarting = true;

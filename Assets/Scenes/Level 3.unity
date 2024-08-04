@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 18784238}
   - component: {fileID: 18784237}
   - component: {fileID: 18784236}
+  - component: {fileID: 18784241}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -258,6 +259,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 18784241}
+        m_TargetAssemblyTypeName: RetryButton, Assembly-CSharp
+        m_MethodName: restartLevelWithDelay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &18784239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +309,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18784234}
   m_CullTransparentMesh: 1
+--- !u!114 &18784241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18784234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57af97a96b79c3c409fa7965187bf61b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 3
+  BananaBG: {fileID: 663336744}
+  BananaSF: {fileID: 847498053}
+  BananaF: {fileID: 1687658169}
 --- !u!1 &183737462
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +516,7 @@ GameObject:
   - component: {fileID: 434837345}
   - component: {fileID: 434837344}
   - component: {fileID: 434837343}
+  - component: {fileID: 434837349}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -754,6 +784,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434837349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434837342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d27ca8f1e609be0a2af4a25c479f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &527711293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1576,6 +1618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eagle_2
       objectReference: {fileID: 0}
+    - target: {fileID: 118168682254121040, guid: 76c55e69255fb3bb88b8ba8d1c2c9318, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1255316954707550259, guid: 76c55e69255fb3bb88b8ba8d1c2c9318, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.7376037
@@ -1789,7 +1835,7 @@ PrefabInstance:
     - target: {fileID: 1322817043758981500, guid: 66d188c8a09fa0456a5fb9ba16be85c8, type: 3}
       propertyPath: LevelSelect
       value: 
-      objectReference: {fileID: 770414803}
+      objectReference: {fileID: 1799630967}
     - target: {fileID: 1322817043758981500, guid: 66d188c8a09fa0456a5fb9ba16be85c8, type: 3}
       propertyPath: NextAnimator
       value: 
@@ -2904,7 +2950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -329, y: -567}
+  m_AnchoredPosition: {x: -1046, y: -567}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799630965
