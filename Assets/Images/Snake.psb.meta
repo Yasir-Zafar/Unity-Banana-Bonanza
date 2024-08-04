@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 957c086244589158aa79a92a40fdbf47
+guid: 257aaa1b1eb577edd9d9b3a2f2ef7ef5
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 300
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -94,7 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: front wing
+  - name: snake head
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -102,10 +102,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 372
-      width: 195
-      height: 158
-    spriteID: 49a575af4ea74ba98a94d16942bc5c11
+      y: 164
+      width: 95
+      height: 171
+    spriteID: d2009917c33177cb3b28b721d3a84edb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,9 +113,9 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 372}
-    spritePosition: {x: 47, y: 95}
-  - name: front wing
+    uvTransform: {x: 4, y: 164}
+    spritePosition: {x: 35, y: 201}
+  - name: static body
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -123,10 +123,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 538
-      width: 195
-      height: 135
-    spriteID: 270b6015ce38c586683d4741786a7db2
+      y: 4
+      width: 213
+      height: 152
+    spriteID: 4cd65c403907f200fb00b8ec13ec7a75
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,8 +134,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 538}
-    spritePosition: {x: 252, y: 30}
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 113, y: 132}
   characterData:
     bones: []
     parts: []
@@ -151,43 +151,7 @@ ScriptedImporter:
     characterGroups: []
     pivot: {x: 0, y: 0}
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Android
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -208,42 +172,22 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: 2
-    spriteName: 
-    isGroup: 1
-    parentIndex: -1
-    spriteID: 109bbfe968c87ec5f9d7d47600fc729b
-    layerID: 17
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: front wing
-    spriteName: front wing
+  - name: snake head
+    spriteName: snake head
     isGroup: 0
-    parentIndex: 0
-    spriteID: 49a575af4ea74ba98a94d16942bc5c11
-    layerID: 23
-    mosaicPosition: {x: 4, y: 372}
+    parentIndex: -1
+    spriteID: d2009917c33177cb3b28b721d3a84edb
+    layerID: 7
+    mosaicPosition: {x: 4, y: 164}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: front wing
-    spriteName: front wing
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 270b6015ce38c586683d4741786a7db2
-    layerID: 16
-    mosaicPosition: {x: 4, y: 538}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Background
-    spriteName: Background
+  - name: static body
+    spriteName: static body
     isGroup: 0
     parentIndex: -1
-    spriteID: fa6063f464fa9f3cc9eb1a1713dc4d7e
-    layerID: 1
+    spriteID: 4cd65c403907f200fb00b8ec13ec7a75
+    layerID: 5
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1

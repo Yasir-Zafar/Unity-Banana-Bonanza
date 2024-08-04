@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 957c086244589158aa79a92a40fdbf47
+guid: a6956b66f8308e837bc08e94cc452598
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,17 +71,17 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   spriteImportData:
-  - name: 
+  - name: Eagle Sprite Sheet (Flipped)_1
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 0
-      height: 0
+      width: 504
+      height: 360
     spriteID: 
     spriteBone: []
     spriteOutline: []
@@ -102,10 +102,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 372
+      y: 4
       width: 195
       height: 158
-    spriteID: 49a575af4ea74ba98a94d16942bc5c11
+    spriteID: 5d41504a29db98ed7920d943befb0c22
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,8 +113,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 372}
-    spritePosition: {x: 47, y: 95}
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 252, y: 133}
   - name: front wing
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -123,10 +123,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 538
+      y: 170
       width: 195
       height: 135
-    spriteID: 270b6015ce38c586683d4741786a7db2
+    spriteID: ad4afeea8b9f91d36bdcc41e3190456c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,8 +134,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 538}
-    spritePosition: {x: 252, y: 30}
+    uvTransform: {x: 4, y: 170}
+    spritePosition: {x: 47, y: 68}
   characterData:
     bones: []
     parts: []
@@ -212,7 +212,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 109bbfe968c87ec5f9d7d47600fc729b
+    spriteID: af12be3bc8b2aab2e8a2aabbf180b0e4
     layerID: 17
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -222,9 +222,9 @@ ScriptedImporter:
     spriteName: front wing
     isGroup: 0
     parentIndex: 0
-    spriteID: 49a575af4ea74ba98a94d16942bc5c11
+    spriteID: 5d41504a29db98ed7920d943befb0c22
     layerID: 23
-    mosaicPosition: {x: 4, y: 372}
+    mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -232,9 +232,9 @@ ScriptedImporter:
     spriteName: front wing
     isGroup: 0
     parentIndex: 0
-    spriteID: 270b6015ce38c586683d4741786a7db2
+    spriteID: ad4afeea8b9f91d36bdcc41e3190456c
     layerID: 16
-    mosaicPosition: {x: 4, y: 538}
+    mosaicPosition: {x: 4, y: 170}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -242,18 +242,24 @@ ScriptedImporter:
     spriteName: Background
     isGroup: 0
     parentIndex: -1
-    spriteID: fa6063f464fa9f3cc9eb1a1713dc4d7e
+    spriteID: 77cae451f534867e9b70ac0626680b60
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
-    isImported: 1
+    isImported: 0
     isVisible: 1
   sharedRigPSDLayers: []
-  pSDLayerImportSetting: []
+  pSDLayerImportSetting:
+  - spriteId: 77cae451f534867e9b70ac0626680b60
+    name: Background
+    layerId: 1
+    flatten: 0
+    isGroup: 0
+    importLayer: 0
   importFileNodeState: 1
   platformSettingsDirtyTick: 0
   spriteSizeExpandChanged: 0
-  generateGOHierarchy: 0
+  generateGOHierarchy: 1
   textureAssetName: 
   prefabAssetName: 
   spriteLibAssetName: 

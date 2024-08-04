@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 957c086244589158aa79a92a40fdbf47
+guid: ab9192c7139e248c9bc7abb228c5ce70
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 300
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -94,7 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: front wing
+  - name: vine
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -102,10 +102,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 372
-      width: 195
-      height: 158
-    spriteID: 49a575af4ea74ba98a94d16942bc5c11
+      y: 3108
+      width: 114
+      height: 763
+    spriteID: 5100041a3c0dded00a64496559afdb20
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,9 +113,9 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 372}
-    spritePosition: {x: 47, y: 95}
-  - name: front wing
+    uvTransform: {x: 4, y: 3108}
+    spritePosition: {x: 614, y: 1166}
+  - name: orangutan
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -123,10 +123,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 538
-      width: 195
-      height: 135
-    spriteID: 270b6015ce38c586683d4741786a7db2
+      y: 2412
+      width: 376
+      height: 688
+    spriteID: f721c53af15a450c3ba510434b76589d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,8 +134,29 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 538}
-    spritePosition: {x: 252, y: 30}
+    uvTransform: {x: 4, y: 2412}
+    spritePosition: {x: 238, y: 694}
+  - name: Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1080
+      height: 2400
+    spriteID: 119590a921b601ff18068f1cd8702b33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []
@@ -151,43 +172,7 @@ ScriptedImporter:
     characterGroups: []
     pivot: {x: 0, y: 0}
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Android
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -208,33 +193,23 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: 2
-    spriteName: 
-    isGroup: 1
-    parentIndex: -1
-    spriteID: 109bbfe968c87ec5f9d7d47600fc729b
-    layerID: 17
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: front wing
-    spriteName: front wing
+  - name: vine
+    spriteName: vine
     isGroup: 0
-    parentIndex: 0
-    spriteID: 49a575af4ea74ba98a94d16942bc5c11
+    parentIndex: -1
+    spriteID: 5100041a3c0dded00a64496559afdb20
     layerID: 23
-    mosaicPosition: {x: 4, y: 372}
+    mosaicPosition: {x: 4, y: 3108}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: front wing
-    spriteName: front wing
+  - name: orangutan
+    spriteName: orangutan
     isGroup: 0
-    parentIndex: 0
-    spriteID: 270b6015ce38c586683d4741786a7db2
-    layerID: 16
-    mosaicPosition: {x: 4, y: 538}
+    parentIndex: -1
+    spriteID: f721c53af15a450c3ba510434b76589d
+    layerID: 21
+    mosaicPosition: {x: 4, y: 2412}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -242,7 +217,7 @@ ScriptedImporter:
     spriteName: Background
     isGroup: 0
     parentIndex: -1
-    spriteID: fa6063f464fa9f3cc9eb1a1713dc4d7e
+    spriteID: 119590a921b601ff18068f1cd8702b33
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
     flatten: 0

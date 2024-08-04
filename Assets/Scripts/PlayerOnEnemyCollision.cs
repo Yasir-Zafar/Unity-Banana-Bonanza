@@ -6,8 +6,10 @@ public class PlayerCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Collision detected with: " + collision.gameObject.name); // Add this line
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Collided with Enemy!"); // Add this line
             RestartLevel();
         }
     }
