@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c07e281c9ead694f8245231f72e6bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Welcome: {fileID: 8300000, guid: 32ab796530677e14390ee2c1bd005097, type: 3}
+  Welcome: {fileID: 8300000, guid: 186539c11b2bbe14c902213d5f09a768, type: 3}
   LevelsInGame: {fileID: 8300000, guid: a4b4cd0b67046394db2482b94a2e8d84, type: 3}
   audioSource: {fileID: 0}
   play: 1
@@ -499,7 +499,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.51, y: 3.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 195747957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -530,7 +530,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
