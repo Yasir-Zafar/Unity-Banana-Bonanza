@@ -17,6 +17,7 @@ public class BallControl : MonoBehaviour
 
     public static bool touchControlsEnabled = true; 
 
+    private Animator animator; // Animator component
     Vector3 dragStartPos;
     Touch touch;
     private bool grounded;
@@ -24,8 +25,17 @@ public class BallControl : MonoBehaviour
     private Transform currentBranch;
     private Camera mainCamera;
 
+    public float lineStartWidth = 0.05f;
+    public float lineEndWidth = 1.0f;
+    private float directionBuffer = 0.1f;
+    private Vector3 previousDirection;
+
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
+        animator = GetComponent<Animator>(); 
+
+        lr.startWidth = lineStartWidth;
+        lr.endWidth = lineEndWidth;
         
         if (lr != null) {
             Color startColor = lr.startColor;
@@ -35,7 +45,7 @@ public class BallControl : MonoBehaviour
             lr.startColor = startColor;
             lr.endColor = endColor;
 
-            lr.widthMultiplier = 0.5f;
+            lr.widthMultiplier = 0.6f;
             lr.positionCount = 0;
         } else {
             Debug.LogWarning("LineRenderer is not assigned!");
@@ -65,7 +75,9 @@ public class BallControl : MonoBehaviour
         dragStartPos.z = 0f;
         lr.positionCount = 2;
         lr.SetPosition(0, transform.position); 
-        lr.SetPosition(1, transform.position); 
+        lr.SetPosition(1, transform.position);
+
+        animator.SetBool("isJumping", false);
     }
 
     void Dragging() {
@@ -82,6 +94,8 @@ public class BallControl : MonoBehaviour
 
         lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, endPos);
+
+        FlipSprite(dragVector);
     }
 
     void DragRelease() {
@@ -100,6 +114,7 @@ public class BallControl : MonoBehaviour
             onBranch = false;
             currentBranch = null;
         }
+        animator.SetBool("isJumping", true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -108,14 +123,19 @@ public class BallControl : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
 
-        if (collision.gameObject.CompareTag("Ground")) {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
             grounded = true;
             Debug.Log("Ball is grounded.");
-        } else if (collision.gameObject.CompareTag("Branch")) {
+            animator.SetBool("isJumping", false); 
+        } 
+        else if (collision.gameObject.CompareTag("Branch")) 
+        {
             onBranch = true;
             currentBranch = collision.transform;
             StartCoroutine(GlideToBranchCenter(collision.contacts[0].point));
             Debug.Log("Ball is on a branch.");
+            animator.SetBool("isJumping", false); 
         }
     }
 
@@ -193,5 +213,22 @@ public class BallControl : MonoBehaviour
         transform.position = currentBranch.position;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
+    }
+
+    private void FlipSprite(Vector3 dragVector)
+    {
+        float direction = dragVector.x;
+        if (Mathf.Abs(direction - previousDirection.x) > directionBuffer)
+        {
+            if (direction < 0 && !transform.localScale.x.Equals(1))
+            {
+                transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            }
+            else if (direction > 0 && !transform.localScale.x.Equals(-1))
+            {
+                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            }
+            previousDirection = dragVector;
+        }
     }
 }
