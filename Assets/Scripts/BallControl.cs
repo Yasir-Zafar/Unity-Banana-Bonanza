@@ -155,7 +155,6 @@ public class BallControl : MonoBehaviour
                     rb.velocity = Vector2.zero;
                     rb.angularVelocity = 0f;
                 }
-
                 break;
             }
         }
@@ -183,6 +182,15 @@ public class BallControl : MonoBehaviour
         }
         
         transform.position = branchCenter;
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+    }
+
+    private void TeleportToBranchCenter()
+    {
+        if (currentBranch == null) return;
+
+        transform.position = currentBranch.position;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
     }
