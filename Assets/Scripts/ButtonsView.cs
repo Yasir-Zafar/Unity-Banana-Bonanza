@@ -37,6 +37,10 @@ public class ButtonsView : MonoBehaviour
                 R[i].enabled = false;
                 played[i] = button[i].GetComponent<Image>();
                 played[i].sprite = Unplayed;
+                if (i == 0)
+                {
+                    button[i].interactable = true;
+                }
             }
             else if (stars[i] == 1)
             {
@@ -45,6 +49,11 @@ public class ButtonsView : MonoBehaviour
                 R[i].texture = RN;
                 played[i] = button[i].GetComponent<Image>();
                 played[i].sprite = Played;
+                button[i].interactable = true;
+                if (i < 8)
+                {
+                    button[i + 1].interactable = true;
+                }
             }
             else if (stars[i] == 2)
             {
@@ -53,6 +62,11 @@ public class ButtonsView : MonoBehaviour
                 R[i].texture = RN;
                 played[i] = button[i].GetComponent<Image>();
                 played[i].sprite = Played;
+                button[i].interactable = true;
+                if (i < 8)
+                {
+                    button[i + 1].interactable = true;
+                }
             }
             else if (stars[i] == 3)
             {
@@ -61,6 +75,11 @@ public class ButtonsView : MonoBehaviour
                 R[i].texture = RY;
                 played[i] = button[i].GetComponent<Image>();
                 played[i].sprite = Played;
+                button[i].interactable = true;
+                if (i < 8)
+                {
+                    button[i + 1].interactable = true;
+                }
             }
         }
 
