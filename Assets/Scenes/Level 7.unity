@@ -1929,6 +1929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Branch_Right_1
       objectReference: {fileID: 0}
+    - target: {fileID: 679711976722613145, guid: 3f6de8562b5b24d7ca3396f57dc8533f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5214136668018032787, guid: 3f6de8562b5b24d7ca3396f57dc8533f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.28
