@@ -17,6 +17,7 @@ public class BallControl : MonoBehaviour
 
     public static bool touchControlsEnabled = true; 
 
+    private Animator animator; // Animator component
     Vector3 dragStartPos;
     Touch touch;
     private bool grounded;
@@ -26,6 +27,7 @@ public class BallControl : MonoBehaviour
 
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
+        animator = GetComponent<Animator>(); // Get the Animator component
         
         if (lr != null) {
             Color startColor = lr.startColor;
@@ -65,7 +67,9 @@ public class BallControl : MonoBehaviour
         dragStartPos.z = 0f;
         lr.positionCount = 2;
         lr.SetPosition(0, transform.position); 
-        lr.SetPosition(1, transform.position); 
+        lr.SetPosition(1, transform.position);
+
+        animator.SetBool("isJumping", false);
     }
 
     void Dragging() {
@@ -100,6 +104,7 @@ public class BallControl : MonoBehaviour
             onBranch = false;
             currentBranch = null;
         }
+        animator.SetBool("isJumping", true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -108,14 +113,19 @@ public class BallControl : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
 
-        if (collision.gameObject.CompareTag("Ground")) {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
             grounded = true;
             Debug.Log("Ball is grounded.");
-        } else if (collision.gameObject.CompareTag("Branch")) {
+            animator.SetBool("isJumping", false); // Stop jump animation
+        } 
+        else if (collision.gameObject.CompareTag("Branch")) 
+        {
             onBranch = true;
             currentBranch = collision.transform;
             StartCoroutine(GlideToBranchCenter(collision.contacts[0].point));
             Debug.Log("Ball is on a branch.");
+            animator.SetBool("isJumping", false); // Stop jump animation
         }
     }
 
