@@ -27,6 +27,8 @@ public class BallControl : MonoBehaviour
 
     public float lineStartWidth = 0.05f;
     public float lineEndWidth = 1.0f;
+    private float directionBuffer = 0.1f;
+    private Vector3 previousDirection;
 
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
@@ -92,6 +94,8 @@ public class BallControl : MonoBehaviour
 
         lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, endPos);
+
+        FlipSprite(dragVector);
     }
 
     void DragRelease() {
@@ -209,5 +213,22 @@ public class BallControl : MonoBehaviour
         transform.position = currentBranch.position;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
+    }
+
+    private void FlipSprite(Vector3 dragVector)
+    {
+        float direction = dragVector.x;
+        if (Mathf.Abs(direction - previousDirection.x) > directionBuffer)
+        {
+            if (direction < 0 && !transform.localScale.x.Equals(1))
+            {
+                transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            }
+            else if (direction > 0 && !transform.localScale.x.Equals(-1))
+            {
+                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            }
+            previousDirection = dragVector;
+        }
     }
 }
