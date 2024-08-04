@@ -1487,66 +1487,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5445810246929375543, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1041979302}
-    - targetCorrespondingSourceObject: {fileID: 5445810246929375543, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1041979301}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
---- !u!1 &1041979300 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5445810246929375543, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
-  m_PrefabInstance: {fileID: 1041979299}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1041979301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041979300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daabb3fa79861a41d87a1b4f65cacad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!70 &1041979302
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041979300}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.99999994, y: 1.9999999}
-  m_Direction: 0
 --- !u!4 &1041979303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 479571725532558602, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
