@@ -1939,7 +1939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c65dc4dc0993a34193d761bc5f4ad13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
+  delay: 3
   playButton: {fileID: 1869983818}
   animatorF: {fileID: 350999375}
   animationNameF: BananaFSpawn
