@@ -17,7 +17,7 @@ public class BallControl : MonoBehaviour
 
     public static bool touchControlsEnabled = true; 
 
-    private Animator animator; // Animator component
+    private Animator animator;
     Vector3 dragStartPos;
     Touch touch;
     private bool grounded;
@@ -30,16 +30,12 @@ public class BallControl : MonoBehaviour
     private float directionBuffer = 0.1f;
     private Vector3 previousDirection;
 
-    public Vector3 initialScale;
-    public float maxSquash = 0.1f;
-
     public Animator MHMAttempt;
 
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
-        animator = GetComponent<Animator>(); 
-
-        initialScale = transform.localScale;
+        animator = GetComponent<Animator>();
+        
 
         lr.startWidth = lineStartWidth;
         lr.endWidth = lineEndWidth;
@@ -105,11 +101,6 @@ public class BallControl : MonoBehaviour
         lr.SetPosition(1, endPos);
 
         FlipSprite(dragVector);
-
-        float dragMagnitude = dragVector.magnitude;
-        float squashAmount = Mathf.Clamp(dragMagnitude / maxForce, 0f, maxSquash);
-
-        transform.localScale = new Vector3(initialScale.x, initialScale.y - squashAmount, initialScale.z);
     }
 
     void DragRelease() {
@@ -128,9 +119,6 @@ public class BallControl : MonoBehaviour
             onBranch = false;
             currentBranch = null;
         }
-        
-        transform.localScale = initialScale;
-
         MHMAttempt.Play("MHMAttemptForJump");
 
     }
@@ -233,20 +221,17 @@ public class BallControl : MonoBehaviour
         rb.angularVelocity = 0f;
     }
 
-    private void FlipSprite(Vector3 dragVector)
-    {
+    private void FlipSprite(Vector3 dragVector) {
         float direction = dragVector.x;
-        if (Mathf.Abs(direction - previousDirection.x) > directionBuffer)
-        {
-            if (direction < 0 && !transform.localScale.x.Equals(1))
-            {
-                transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-            }
-            else if (direction > 0 && !transform.localScale.x.Equals(-1))
-            {
-                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        if (Mathf.Abs(direction - previousDirection.x) > directionBuffer) {
+            Vector3 localScale = transform.localScale;
+            if (direction < 0 && localScale.x != 1) {
+                transform.localScale = new Vector3(1.2f, localScale.y, localScale.z);
+            } else if (direction > 0 && localScale.x != -1) {
+                transform.localScale = new Vector3(-1.2f, localScale.y, localScale.z);
             }
             previousDirection = dragVector;
         }
     }
+
 }
