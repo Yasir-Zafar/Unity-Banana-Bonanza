@@ -30,6 +30,8 @@ public class BallControl : MonoBehaviour
     private float directionBuffer = 0.1f;
     private Vector3 previousDirection;
 
+    public Animator MHMAttempt;
+
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
         animator = GetComponent<Animator>(); 
@@ -50,6 +52,8 @@ public class BallControl : MonoBehaviour
         } else {
             Debug.LogWarning("LineRenderer is not assigned!");
         }
+
+        MHMAttempt.Play("monkey_idle");
     }
 
     private void Update() {
@@ -114,7 +118,8 @@ public class BallControl : MonoBehaviour
             onBranch = false;
             currentBranch = null;
         }
-        animator.SetBool("isJumping", true);
+        MHMAttempt.Play("MHMAttemptForJump");
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -127,7 +132,7 @@ public class BallControl : MonoBehaviour
         {
             grounded = true;
             Debug.Log("Ball is grounded.");
-            animator.SetBool("isJumping", false); 
+            MHMAttempt.Play("monkey_idle");
         } 
         else if (collision.gameObject.CompareTag("Branch")) 
         {
@@ -135,7 +140,7 @@ public class BallControl : MonoBehaviour
             currentBranch = collision.transform;
             StartCoroutine(GlideToBranchCenter(collision.contacts[0].point));
             Debug.Log("Ball is on a branch.");
-            animator.SetBool("isJumping", false); 
+            MHMAttempt.Play("monkey_idle");
         }
     }
 
