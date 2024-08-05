@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: c34bce064764055bdb113e9b0353f250, type: 3}
       propertyPath: m_Name
-      value: Monkey Idle, Jump sprite sheet
+      value: Monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: c34bce064764055bdb113e9b0353f250, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: -8611120017501828280, guid: c34bce064764055bdb113e9b0353f250, type: 3}
       propertyPath: m_LocalPosition.x
@@ -310,7 +314,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &5739858058905050201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -488,4 +492,4 @@ MonoBehaviour:
   rb: {fileID: 6357107104950607735}
   lr: {fileID: 5317647833393377326}
   lineStartWidth: 0.05
-  lineEndWidth: 0.6
+  lineEndWidth: 0.45

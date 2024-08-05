@@ -1003,6 +1003,10 @@ PrefabInstance:
       propertyPath: LevelSelectAnimator
       value: 
       objectReference: {fileID: 378454699}
+    - target: {fileID: 7804597534480461687, guid: 66d188c8a09fa0456a5fb9ba16be85c8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8864539470578217855, guid: 66d188c8a09fa0456a5fb9ba16be85c8, type: 3}
       propertyPath: m_Name
       value: Banana
