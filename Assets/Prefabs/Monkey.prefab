@@ -41,6 +41,14 @@ PrefabInstance:
       value: -0.0043410743
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c34bce064764055bdb113e9b0353f250, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: c34bce064764055bdb113e9b0353f250, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: c34bce064764055bdb113e9b0353f250, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -493,3 +501,6 @@ MonoBehaviour:
   lr: {fileID: 5317647833393377326}
   lineStartWidth: 0.05
   lineEndWidth: 0.45
+  initialScale: {x: 0, y: 0, z: 0}
+  maxSquash: 0.1
+  MHMAttempt: {fileID: 0}

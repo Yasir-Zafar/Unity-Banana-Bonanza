@@ -30,11 +30,16 @@ public class BallControl : MonoBehaviour
     private float directionBuffer = 0.1f;
     private Vector3 previousDirection;
 
+    public Vector3 initialScale;
+    public float maxSquash = 0.1f;
+
     public Animator MHMAttempt;
 
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
         animator = GetComponent<Animator>(); 
+
+        initialScale = transform.localScale;
 
         lr.startWidth = lineStartWidth;
         lr.endWidth = lineEndWidth;
@@ -100,6 +105,11 @@ public class BallControl : MonoBehaviour
         lr.SetPosition(1, endPos);
 
         FlipSprite(dragVector);
+
+        float dragMagnitude = dragVector.magnitude;
+        float squashAmount = Mathf.Clamp(dragMagnitude / maxForce, 0f, maxSquash);
+
+        transform.localScale = new Vector3(initialScale.x, initialScale.y - squashAmount, initialScale.z);
     }
 
     void DragRelease() {
@@ -118,6 +128,9 @@ public class BallControl : MonoBehaviour
             onBranch = false;
             currentBranch = null;
         }
+        
+        transform.localScale = initialScale;
+
         MHMAttempt.Play("MHMAttemptForJump");
 
     }
