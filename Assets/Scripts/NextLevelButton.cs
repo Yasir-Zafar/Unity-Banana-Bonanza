@@ -12,11 +12,12 @@ public class NextLevelButton : MonoBehaviour
     public Animator BananaBG;
     public Animator BananaSF;
     public Animator BananaF;
+    public Animator MonkeDance;
 
-    
 
     public void EndGame()
     {
+        MonkeDance.gameObject.SetActive(false);
         BananaBG.Play("BananaBGSpawn");
         BananaSF.Play("BananaSFSpawn");
         BananaF.Play("BananaFSpawn");

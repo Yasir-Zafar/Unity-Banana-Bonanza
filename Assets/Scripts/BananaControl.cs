@@ -10,6 +10,7 @@ public class BananaControl : MonoBehaviour
     public Animator LevelSelectAnimator;
     public Animator RetryAnimator;
     public Animator NextAnimator;
+    public Animator MonkeDance;
 
     public Button LevelSelect;
     public Button Retry;
@@ -20,6 +21,7 @@ public class BananaControl : MonoBehaviour
 
     void Start()
     {
+        MonkeDance.gameObject.SetActive(false);
         LevelSelect.gameObject.SetActive(false);
         Retry.gameObject.SetActive(false);
         Next.gameObject.SetActive(false);
@@ -47,6 +49,15 @@ public class BananaControl : MonoBehaviour
             NextAnimator.Play("NextSpawn");
 
             collision.gameObject.SetActive(false);
+
+            StartCoroutine(MonkeyDanceInator());
         }
+    }
+
+    private IEnumerator MonkeyDanceInator()
+    {
+        yield return new WaitForSeconds(0.5f);
+        MonkeDance.gameObject.SetActive(true);
+        MonkeDance.Play("dance");
     }
 }

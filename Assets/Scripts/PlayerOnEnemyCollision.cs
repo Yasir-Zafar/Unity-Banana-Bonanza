@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEditor;
 
 public class PlayerCollision : MonoBehaviour
 {
     public Animator StarAnimator;           // The Animator component
     public Animator LevelSelectAnimator;
     public Animator RetryAnimator;
+    public Animator SadMonkeAnimator;
 
     public Button LevelSelect;
     public Button Retry;
@@ -21,6 +23,7 @@ public class PlayerCollision : MonoBehaviour
         LevelSelect.gameObject.SetActive(false);
         Retry.gameObject.SetActive(false);
         Next.gameObject.SetActive(false);
+        SadMonkeAnimator.gameObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -50,8 +53,16 @@ public class PlayerCollision : MonoBehaviour
 
         Retry.gameObject.SetActive(true);
         RetryAnimator.Play("RetrySpawn");
+
+        StartCoroutine(MonkeySadInator());
     }
 
+    private IEnumerator MonkeySadInator()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SadMonkeAnimator.gameObject.SetActive(true);
+        SadMonkeAnimator.Play("sad");
+    }
     private IEnumerator PlayAgain()
     {
         yield return new WaitForSeconds(4);

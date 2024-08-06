@@ -334,6 +334,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5313527876412095497, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
+      propertyPath: MHMAttempt
+      value: 
+      objectReference: {fileID: 140197919}
     - target: {fileID: 7821440740466853158, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
       propertyPath: m_Name
       value: Monkey
@@ -409,6 +413,7 @@ MonoBehaviour:
   StarAnimator: {fileID: 457638403}
   LevelSelectAnimator: {fileID: 2033745189}
   RetryAnimator: {fileID: 1998627811}
+  SadMonkeAnimator: {fileID: 510831449}
   LevelSelect: {fileID: 2033745190}
   Retry: {fileID: 1998627812}
   Next: {fileID: 1016842687}
@@ -514,6 +519,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8954087608422554949, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
   m_PrefabInstance: {fileID: 140197914}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &140197919 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 848223082869851266, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
+  m_PrefabInstance: {fileID: 140197914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &162393366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -570,6 +580,10 @@ PrefabInstance:
       propertyPath: Retry
       value: 
       objectReference: {fileID: 1998627812}
+    - target: {fileID: 1322817043758981500, guid: 66d188c8a09fa0456a5fb9ba16be85c8, type: 3}
+      propertyPath: MonkeDance
+      value: 
+      objectReference: {fileID: 773298405}
     - target: {fileID: 1322817043758981500, guid: 66d188c8a09fa0456a5fb9ba16be85c8, type: 3}
       propertyPath: LevelSelect
       value: 
@@ -986,6 +1000,113 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457638401}
   m_CullTransparentMesh: 1
+--- !u!1001 &510831448
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1356433372}
+    m_Modifications:
+    - target: {fileID: 680994554882294975, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111521919050161043, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Name
+      value: Sad Monkey, Keyframe Animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111521919050161043, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111521919050161043, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 692.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 692.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -263.08786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -415.40192
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15577.571
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588763830709085979, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102626963023515301, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946077452601668865, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186038765734170413, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+--- !u!95 &510831449 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 732835521529712720, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+  m_PrefabInstance: {fileID: 510831448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &510831450 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+  m_PrefabInstance: {fileID: 510831448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &524182019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1526,6 +1647,125 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 479571725532558602, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
   m_PrefabInstance: {fileID: 753500455}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &773298404
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1356433372}
+    m_Modifications:
+    - target: {fileID: 1225027851106814025, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477718592630986308, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894915425660062601, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666435434204582101, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037840251675182459, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155200702336834490, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932730157300793604, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_Name
+      value: Monkey dance pose sprites
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193696667881962675, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223245776203828035, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656843823607694928, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013199293032062347, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 692.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 692.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 173.08412
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.693459
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -415.4019
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15577.571
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+--- !u!95 &773298405 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 479281612209624713, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+  m_PrefabInstance: {fileID: 773298404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &773298406 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+  m_PrefabInstance: {fileID: 773298404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &773919612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6140751314360276659, guid: 8e5a6a26b5adcf76da09344497e4baf1, type: 3}
@@ -1991,6 +2231,7 @@ MonoBehaviour:
   BananaBG: {fileID: 805485070}
   BananaSF: {fileID: 1419150426}
   BananaF: {fileID: 524182022}
+  MonkeDance: {fileID: 773298405}
 --- !u!114 &1016842685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,7 +2626,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 237400999}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2396,7 +2637,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 12
   m_TargetDisplay: 0
 --- !u!224 &1356433372
 RectTransform:
@@ -2414,6 +2655,8 @@ RectTransform:
   - {fileID: 2033745187}
   - {fileID: 1998627808}
   - {fileID: 1016842683}
+  - {fileID: 510831450}
+  - {fileID: 773298406}
   - {fileID: 805485068}
   - {fileID: 1419150424}
   - {fileID: 524182020}
@@ -3032,6 +3275,8 @@ MonoBehaviour:
   BananaBG: {fileID: 805485070}
   BananaSF: {fileID: 1419150426}
   BananaF: {fileID: 524182022}
+  MonkeSad: {fileID: 510831449}
+  MonkeDance: {fileID: 773298405}
 --- !u!114 &1998627810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3359,6 +3604,8 @@ MonoBehaviour:
   BananaBG: {fileID: 805485070}
   BananaSF: {fileID: 1419150426}
   BananaF: {fileID: 524182022}
+  MonkeSad: {fileID: 510831449}
+  MonkeDance: {fileID: 773298405}
 --- !u!1 &2099285297
 GameObject:
   m_ObjectHideFlags: 0

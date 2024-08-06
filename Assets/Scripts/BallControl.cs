@@ -82,7 +82,7 @@ public class BallControl : MonoBehaviour
         lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, transform.position);
 
-        animator.SetBool("isJumping", false);
+        MHMAttempt.Play("monkey_idle");
     }
 
     void Dragging() {

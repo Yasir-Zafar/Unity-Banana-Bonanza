@@ -608,6 +608,8 @@ MonoBehaviour:
   BananaBG: {fileID: 306424922}
   BananaSF: {fileID: 1406662859}
   BananaF: {fileID: 2095309028}
+  MonkeSad: {fileID: 1778641969}
+  MonkeDance: {fileID: 725599124}
 --- !u!1 &383405510
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,8 +678,8 @@ Canvas:
   m_GameObject: {fileID: 383405510}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -688,7 +690,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 12
   m_TargetDisplay: 0
 --- !u!224 &383405514
 RectTransform:
@@ -706,6 +708,8 @@ RectTransform:
   - {fileID: 378454697}
   - {fileID: 658290443}
   - {fileID: 1969050389}
+  - {fileID: 1778641970}
+  - {fileID: 725599125}
   - {fileID: 306424920}
   - {fileID: 1406662857}
   - {fileID: 2095309026}
@@ -984,6 +988,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 658290440}
     - target: {fileID: 1322817043758981500, guid: 66d188c8a09fa0456a5fb9ba16be85c8, type: 3}
+      propertyPath: MonkeDance
+      value: 
+      objectReference: {fileID: 725599124}
+    - target: {fileID: 1322817043758981500, guid: 66d188c8a09fa0456a5fb9ba16be85c8, type: 3}
       propertyPath: LevelSelect
       value: 
       objectReference: {fileID: 378454700}
@@ -1054,6 +1062,8 @@ MonoBehaviour:
   BananaBG: {fileID: 306424922}
   BananaSF: {fileID: 1406662859}
   BananaF: {fileID: 2095309028}
+  MonkeSad: {fileID: 1778641969}
+  MonkeDance: {fileID: 725599124}
 --- !u!114 &658290438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,6 +1224,125 @@ RectTransform:
   m_AnchoredPosition: {x: 250, y: -467}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &725599123
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 383405514}
+    m_Modifications:
+    - target: {fileID: 1225027851106814025, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477718592630986308, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894915425660062601, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666435434204582101, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037840251675182459, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155200702336834490, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932730157300793604, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_Name
+      value: Monkey dance pose sprites
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193696667881962675, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223245776203828035, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656843823607694928, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013199293032062347, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 692.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 692.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 173.08412
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.693459
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -382.51593
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15577.571
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+--- !u!95 &725599124 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 479281612209624713, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+  m_PrefabInstance: {fileID: 725599123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &725599125 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9141922245386049895, guid: d06b61d7c546fbc5ebeec3eda4908713, type: 3}
+  m_PrefabInstance: {fileID: 725599123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &868722112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,6 +2183,113 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1778641968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 383405514}
+    m_Modifications:
+    - target: {fileID: 680994554882294975, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111521919050161043, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Name
+      value: Sad Monkey, Keyframe Animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111521919050161043, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111521919050161043, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 692.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 692.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 605.79443
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -415.40192
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15577.571
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588763830709085979, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102626963023515301, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946077452601668865, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186038765734170413, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+--- !u!95 &1778641969 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 732835521529712720, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+  m_PrefabInstance: {fileID: 1778641968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1778641970 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
+  m_PrefabInstance: {fileID: 1778641968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1920904870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2607,7 @@ MonoBehaviour:
   BananaBG: {fileID: 306424922}
   BananaSF: {fileID: 1406662859}
   BananaF: {fileID: 2095309028}
+  MonkeDance: {fileID: 725599124}
 --- !u!114 &1969050391
 MonoBehaviour:
   m_ObjectHideFlags: 0
