@@ -9,7 +9,7 @@ public class PantherSwipe : MonoBehaviour
     public float swipeSpeed = 2f;
     public float swipeInterval = 1f;
     public float visibilityDuration = 0.1f;
-    public bool swipeFromTopToBottom = true; 
+    public bool swipeFromTopToBottom = true;
 
     private bool isSwiping = false;
     private float startAngle;
@@ -18,6 +18,7 @@ public class PantherSwipe : MonoBehaviour
     private LineRenderer swipeArcLineRenderer;
     private SpriteRenderer swipeArcSpriteRenderer;
     private Collider2D swipeArcCollider;
+    private Animator animator;
 
     private void Start()
     {
@@ -32,16 +33,7 @@ public class PantherSwipe : MonoBehaviour
             endAngle = -swipeAngle / 2;
         }
 
-        swipeArcLineRenderer = swipeArc.GetComponent<LineRenderer>();
-        swipeArcSpriteRenderer = swipeArc.GetComponent<SpriteRenderer>();
-        swipeArcCollider = swipeArc.GetComponent<Collider2D>();
-
-        if (swipeArcLineRenderer != null)
-            swipeArcLineRenderer.enabled = false;
-        if (swipeArcSpriteRenderer != null)
-            swipeArcSpriteRenderer.enabled = false;
-        if (swipeArcCollider != null)
-            swipeArcCollider.enabled = false;
+        animator = GetComponent<Animator>();
 
         StartCoroutine(SwipeRoutine());
     }
@@ -52,13 +44,10 @@ public class PantherSwipe : MonoBehaviour
         {
             if (!isSwiping)
             {
-                SetSwipeArcVisibility(true);
-
+                animator.SetTrigger("Swipe");
                 yield return new WaitForSeconds(visibilityDuration);
 
                 yield return StartCoroutine(Swipe());
-
-                SetSwipeArcVisibility(false);
             }
             yield return new WaitForSeconds(swipeInterval);
         }
@@ -78,15 +67,5 @@ public class PantherSwipe : MonoBehaviour
 
         swipeArcParent.localRotation = Quaternion.Euler(0f, 0f, startAngle);
         isSwiping = false;
-    }
-
-    private void SetSwipeArcVisibility(bool visible)
-    {
-        if (swipeArcLineRenderer != null)
-            swipeArcLineRenderer.enabled = visible;
-        if (swipeArcSpriteRenderer != null)
-            swipeArcSpriteRenderer.enabled = visible;
-        if (swipeArcCollider != null)
-            swipeArcCollider.enabled = visible;
     }
 }
