@@ -1094,6 +1094,8 @@ MonoBehaviour:
   BananaF: {fileID: 2095309028}
   MonkeSad: {fileID: 0}
   MonkeDance: {fileID: 0}
+  GokuPose: {fileID: 0}
+  levelIndex: 0
 --- !u!114 &658290438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,23 +1707,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2343499772880060570, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.999818
       objectReference: {fileID: 0}
     - target: {fileID: 2343499772880060570, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.019076109
       objectReference: {fileID: 0}
     - target: {fileID: 2343499772880060570, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2343499772880060570, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2343499772880060570, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -2.186
       objectReference: {fileID: 0}
     - target: {fileID: 2343499772880060570, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1734,6 +1736,14 @@ PrefabInstance:
     - target: {fileID: 3480668384535959801, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
       propertyPath: m_Name
       value: Goku pose sprites
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024679462661872854, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.025316294
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024679462661872854, guid: 4afbf5dfd62bb40e1a93a255372e2805, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.33630824
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
