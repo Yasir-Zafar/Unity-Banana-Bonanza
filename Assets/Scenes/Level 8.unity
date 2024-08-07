@@ -845,6 +845,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gem_2
       objectReference: {fileID: 0}
+    - target: {fileID: 6399373599277291413, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399373599277291413, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.80784315
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2177,6 +2185,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gem
       objectReference: {fileID: 0}
+    - target: {fileID: 6399373599277291413, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399373599277291413, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.80784315
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2349,6 +2365,14 @@ PrefabInstance:
     - target: {fileID: 5445810246929375543, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
       propertyPath: m_Name
       value: Gem_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399373599277291413, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399373599277291413, guid: ffa4b78fe2d310b8ea6d86aa21186ed9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.80784315
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
