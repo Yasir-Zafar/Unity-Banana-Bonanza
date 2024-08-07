@@ -3161,6 +3161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
+    - target: {fileID: 7582133540468770211, guid: 64c797eec275aceefab26a84fc5e1589, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8786874290105228736, guid: 64c797eec275aceefab26a84fc5e1589, type: 3}
       propertyPath: m_LocalScale.x
       value: -1.7000003
