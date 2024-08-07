@@ -12,6 +12,7 @@ public class BananaControl : MonoBehaviour
     public Animator RetryAnimator;
     public Animator NextAnimator;
     public Animator MonkeDance;
+    public Animator GokuPose;
 
     public Button LevelSelect;
     public Button Retry;
@@ -20,13 +21,17 @@ public class BananaControl : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip yayyy;
 
+    public int levelIndex;
+
     void Start()
     {
         MonkeDance.gameObject.SetActive(false);
+        GokuPose.gameObject.SetActive(false);
         LevelSelect.gameObject.SetActive(false);
         Retry.gameObject.SetActive(false);
         Next.gameObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+        GameManager.Instance.SaveStars(levelIndex, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -58,7 +63,13 @@ public class BananaControl : MonoBehaviour
     private IEnumerator MonkeyDanceInator()
     {
         yield return new WaitForSeconds(0.5f);
-        MonkeDance.gameObject.SetActive(true);
-        MonkeDance.Play("dance");
+        if (GameManager.Instance.GetStars(levelIndex) <= 2)
+        {
+            MonkeDance.gameObject.SetActive(true);
+        }
+        else if(GameManager.Instance.GetStars(levelIndex) == 3)
+        {
+            GokuPose.gameObject.SetActive(true);
+        }
     }
 }

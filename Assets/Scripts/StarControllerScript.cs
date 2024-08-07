@@ -23,6 +23,8 @@ public class StarControllerScript : MonoBehaviour
     void Start()
     {
         starsCount = 0;
+        GameManager.Instance.stars[levelIndex] = 0;
+        GameManager.Instance.SaveStars(levelIndex, 0);
     }
 
     void Update()
@@ -43,6 +45,10 @@ public class StarControllerScript : MonoBehaviour
         {
             starsCount = 1;
         }
+        else if(GameManager.Instance.lose == true)
+        {
+            starsCount = 0;
+        }
 
         GameManager.Instance.SaveStars(levelIndex, starsCount);
     }
@@ -50,13 +56,18 @@ public class StarControllerScript : MonoBehaviour
     //1st star
     void updateL()
     {
-        L.texture = LY;
+        if (GameManager.Instance.lose == false)
+        { L.texture = LY; }
+        else
+        {
+            L.texture = LN;
+        }
     }
 
     //2nd star
     void updateM()
     {
-        if (GemManager.Instance.GetTotalGems() >= (maxGems/(2.0f)))
+        if (GemManager.Instance.GetTotalGems() >= (maxGems/(2.0f)) && GameManager.Instance.lose == false)
         {
             M.texture = MY;
         }
@@ -69,7 +80,7 @@ public class StarControllerScript : MonoBehaviour
     //3rd star
     void updateR()
     {
-        if (GemManager.Instance.GetTotalGems() == maxGems)
+        if (GemManager.Instance.GetTotalGems() == maxGems && GameManager.Instance.lose == false)
         {
             R.texture = RY;
         }

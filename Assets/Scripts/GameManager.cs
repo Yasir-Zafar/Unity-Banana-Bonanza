@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public int[] stars = new int[9];
+    public bool lose;
 
     private void Awake()
     {
