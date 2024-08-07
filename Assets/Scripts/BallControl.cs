@@ -8,7 +8,7 @@ public class BallControl : MonoBehaviour
 {
     public float power = 7f;
     public float sensitivity = 2f;
-    public float maxForce = 15f;
+    public float maxForce = 10f;
     public float maxLineHeight = 5f;
     public float maxLineWidth = 3f;
     public float glideSpeed = 5f;
