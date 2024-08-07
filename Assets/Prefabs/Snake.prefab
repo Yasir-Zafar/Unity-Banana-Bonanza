@@ -649,8 +649,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipeArcParent: {fileID: 8602279686476921446}
   swipeArc: {fileID: 7304372000626771925}
-  swipeAngle: 50
-  swipeSpeed: 1
+  swipeAngle: 45
+  swipeSpeed: 0.65
   swipeInterval: 2
   visibilityDuration: 0.1
   swipeFromTopToBottom: 1
