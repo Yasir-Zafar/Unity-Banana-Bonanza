@@ -13,11 +13,13 @@ public class NextLevelButton : MonoBehaviour
     public Animator BananaSF;
     public Animator BananaF;
     public Animator MonkeDance;
+    public Animator GokuPose;
 
 
     public void EndGame()
     {
         MonkeDance.gameObject.SetActive(false);
+        GokuPose.gameObject.SetActive(false);
         BananaBG.Play("BananaBGSpawn");
         BananaSF.Play("BananaSFSpawn");
         BananaF.Play("BananaFSpawn");

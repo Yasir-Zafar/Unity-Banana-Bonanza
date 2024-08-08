@@ -1002,6 +1002,7 @@ MonoBehaviour:
   BananaSF: {fileID: 288630637}
   BananaF: {fileID: 514889853}
   MonkeDance: {fileID: 895108396}
+  GokuPose: {fileID: 1000937355}
 --- !u!114 &185783259
 MonoBehaviour:
   m_ObjectHideFlags: 0
