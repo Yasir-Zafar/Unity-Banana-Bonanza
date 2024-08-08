@@ -17,6 +17,8 @@ public class PowerMove : MonoBehaviour
         {
             Debug.Log("PowerMove collided with Player.");
 
+            GameManager.Instance.PowerUp = true;
+
             BallControl ballControl = collision.GetComponent<BallControl>();
             if (ballControl != null)
             {

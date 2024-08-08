@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool lose;
     public float niggaPower;
     public bool Invincible = false;
+    public bool PowerUp = false;
 
     private void Awake()
     {
@@ -88,9 +89,13 @@ public class GameManager : MonoBehaviour
         {
             return 3;
         }
-        else if (niggaPower > 3.05)
+        else if (niggaPower > 3.05 && PowerUp == false)
         {
             return 4;
+        }
+        else if (niggaPower > 3.05 && PowerUp == true)
+        {
+            return 5;
         }
         else
         {
