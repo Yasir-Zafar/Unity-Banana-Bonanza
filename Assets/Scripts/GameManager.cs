@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public int[] stars = new int[9];
     public bool lose;
+    public float niggaPower;
 
     private void Awake()
     {
@@ -68,4 +69,31 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public int niggaBars()
+    {
+        if (niggaPower == 0)
+        {
+            return 0;
+        }
+        else if (niggaPower > 0 && niggaPower <= 1.0466)
+        {
+            return 1;
+        }
+        else if (niggaPower > 1.0466 && niggaPower <= 2.0932)
+        {
+            return 2;
+        }
+        else if (niggaPower > 2.0932 && niggaPower <= 3.05)
+        {
+            return 3;
+        }
+        else if (niggaPower > 3.05)
+        {
+            return 4;
+        }
+        else
+        {
+            return 100;
+        }
+    }
 }

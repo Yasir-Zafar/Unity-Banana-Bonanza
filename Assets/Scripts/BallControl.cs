@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -92,6 +93,8 @@ public class BallControl : MonoBehaviour
         draggingPos.z = 0f;
 
         Vector3 dragVector = draggingPos - dragStartPos;
+        GameManager.Instance.niggaPower = dragVector.magnitude;
+        Debug.Log(GameManager.Instance.niggaPower);
 
         Vector3 endPos = transform.position - dragVector;
         endPos.x = Mathf.Clamp(endPos.x, transform.position.x - maxLineWidth, transform.position.x + maxLineWidth);
@@ -104,6 +107,7 @@ public class BallControl : MonoBehaviour
     }
 
     void DragRelease() {
+        GameManager.Instance.niggaPower = 0;
         lr.positionCount = 0;
 
         Vector3 dragReleasePos = mainCamera.ScreenToWorldPoint(touch.position);
