@@ -47,7 +47,7 @@ public class PlayerCollision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name); // Add this line
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && GameManager.Instance.Invincible == false)
         {
             leaves.enabled = false;
             head.enabled = false;
@@ -64,6 +64,10 @@ public class PlayerCollision : MonoBehaviour
             GameManager.Instance.SaveStars(levelIndex, 0);
             Debug.Log("Collided with Enemy!"); // Add this line
             LoseScreen();
+        }
+        else if (collision.gameObject.CompareTag("Enemy") && GameManager.Instance.Invincible == true)
+        {
+            collision.gameObject.SetActive(false);
         }
     }
 

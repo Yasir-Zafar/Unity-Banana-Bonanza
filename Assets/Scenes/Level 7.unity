@@ -1141,6 +1141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eagle_1
       objectReference: {fileID: 0}
+    - target: {fileID: 8632479010736524700, guid: 1337e2f452836fa02b660980a8e350bf, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

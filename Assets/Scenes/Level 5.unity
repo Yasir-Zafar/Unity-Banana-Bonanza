@@ -3452,6 +3452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eagle_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7126931831248715275, guid: 609c5303a369b5884b26023d0ad712f4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8228053881918826088, guid: 609c5303a369b5884b26023d0ad712f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.76
