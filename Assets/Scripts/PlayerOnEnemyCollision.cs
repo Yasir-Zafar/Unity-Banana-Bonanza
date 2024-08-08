@@ -18,6 +18,9 @@ public class PlayerCollision : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip awww;
+    public AudioClip supah;
+
+    public int wtf=0;
 
     //fk you animator
     public SpriteRenderer leaves;
@@ -33,6 +36,11 @@ public class PlayerCollision : MonoBehaviour
 
     public int levelIndex;
 
+    private Color[] boom = { Color.red,Color.green,Color.blue,Color.yellow,Color.magenta,Color.cyan,Color.white};
+    private int currentColorIndex = 0;
+    public float colorChangeInterval = 0.1f;
+    private float timer;
+
     void Start()
     {
         GameManager.Instance.lose = false;
@@ -42,6 +50,50 @@ public class PlayerCollision : MonoBehaviour
         SadMonkeAnimator.gameObject.SetActive(false);
         Dead.gameObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if (GameManager.Instance.Invincible == true)
+        {
+            wtf++;
+            if (wtf == 1)
+            {
+                super();
+            }
+            timer += Time.deltaTime;
+
+            if (timer >= colorChangeInterval)
+            {
+                timer = 0f;
+
+                currentColorIndex = (currentColorIndex + 1) % boom.Length;
+
+                leaves.color = boom[currentColorIndex];
+                head.color = boom[currentColorIndex];
+                rightUpperArm.color = boom[currentColorIndex];
+                leftUpperArm.color = boom[currentColorIndex];
+                rightLowerArm.color = boom[currentColorIndex];
+                leftLowerArm.color = boom[currentColorIndex];
+                rightLeg.color = boom[currentColorIndex];
+                leftLeg.color = boom[currentColorIndex];
+                torso.color = boom[currentColorIndex];
+                tail.color = boom[currentColorIndex];
+            }
+        }
+        else if(GameManager.Instance.Invincible == false)
+        {
+            leaves.color = boom[6];
+            head.color = boom[6];
+            rightUpperArm.color = boom[6];
+            leftUpperArm.color = boom[6];
+            rightLowerArm.color = boom[6];
+            leftLowerArm.color = boom[6];
+            rightLeg.color = boom[6];
+            leftLeg.color = boom[6];
+            torso.color = boom[6];
+            tail.color = boom[6];
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -101,5 +153,26 @@ public class PlayerCollision : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         AudioManager.Instance.audioSource.Play();
+    }
+
+    private IEnumerator PlayAgainAfterSuper()
+    {
+        yield return new WaitForSeconds(13);
+        audioSource.Pause();
+        AudioManager.Instance.audioSource.Play();
+    }
+
+    private void super()
+    {
+        if (AudioManager.Instance.play == true)
+        {
+            if (GameManager.Instance.Invincible == true)
+            {
+                audioSource.clip = supah;
+                AudioManager.Instance.audioSource.Pause();
+                audioSource.Play();
+                StartCoroutine(PlayAgainAfterSuper());
+            }
+        }
     }
 }

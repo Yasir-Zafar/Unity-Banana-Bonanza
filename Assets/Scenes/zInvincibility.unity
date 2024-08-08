@@ -336,6 +336,7 @@ MonoBehaviour:
   Retry: {fileID: 369934593}
   Next: {fileID: 1181469059}
   awww: {fileID: 8300000, guid: 9df2c4999c7edd146aeb20ffe190d53b, type: 3}
+  supah: {fileID: 8300000, guid: f973e76208d9d884e90bfd3acfc51189, type: 3}
   leaves: {fileID: 611773219}
   head: {fileID: 611773218}
   rightUpperArm: {fileID: 611773217}
@@ -347,6 +348,7 @@ MonoBehaviour:
   torso: {fileID: 611773211}
   tail: {fileID: 611773210}
   levelIndex: 8
+  colorChangeInterval: 0.1
 --- !u!82 &109037782
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2014,7 +2016,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 15.98, y: 13.41}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2064,7 +2066,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11f46d83b3489b740bd815bd28052cdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2085,8 +2087,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.21, y: -2.35, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.051200002, y: 0.051200002, z: 0.128}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
