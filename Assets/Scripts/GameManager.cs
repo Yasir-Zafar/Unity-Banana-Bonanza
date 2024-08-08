@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int[] stars = new int[9];
     public bool lose;
     public float niggaPower;
+    public bool Invincible = false;
 
     private void Awake()
     {

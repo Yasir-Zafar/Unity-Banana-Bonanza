@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -73,6 +74,7 @@ public class BallControl : MonoBehaviour
             if (touch.phase == TouchPhase.Ended) {
                 DragRelease();
             }
+
         }
     }
 
@@ -238,4 +240,20 @@ public class BallControl : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Invincibility"))
+        {
+            GameManager.Instance.Invincible = true;
+            collision.gameObject.SetActive(false);
+            StartCoroutine(endInv());
+        }
+    }
+
+    private IEnumerator endInv()
+    {
+        yield return new WaitForSeconds(5);
+        Debug.Log("\n\nNIgga\n\n");
+        GameManager.Instance.Invincible = true;
+    }
 }
