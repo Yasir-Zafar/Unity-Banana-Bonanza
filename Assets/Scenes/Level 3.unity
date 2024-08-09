@@ -1056,6 +1056,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 183737463}
     m_Modifications:
+    - target: {fileID: 6694828430657448896, guid: 1337e2f452836fa02b660980a8e350bf, type: 3}
+      propertyPath: leftWall
+      value: 
+      objectReference: {fileID: 634144111}
+    - target: {fileID: 6694828430657448896, guid: 1337e2f452836fa02b660980a8e350bf, type: 3}
+      propertyPath: rightWall
+      value: 
+      objectReference: {fileID: 1592368757}
+    - target: {fileID: 6694828430657448896, guid: 1337e2f452836fa02b660980a8e350bf, type: 3}
+      propertyPath: startingWall
+      value: 
+      objectReference: {fileID: 634144111}
     - target: {fileID: 7423234251169732095, guid: 1337e2f452836fa02b660980a8e350bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.767
@@ -3473,7 +3485,7 @@ Transform:
   m_GameObject: {fileID: 1650811632}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 8.59, z: -0.0006143498}
+  m_LocalPosition: {x: 0.8, y: 9.17, z: -0.0006143498}
   m_LocalScale: {x: 6, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3858,15 +3870,15 @@ PrefabInstance:
     - target: {fileID: 9167484784573155205, guid: 609c5303a369b5884b26023d0ad712f4, type: 3}
       propertyPath: leftWall
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 634144111}
     - target: {fileID: 9167484784573155205, guid: 609c5303a369b5884b26023d0ad712f4, type: 3}
       propertyPath: rightWall
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1592368757}
     - target: {fileID: 9167484784573155205, guid: 609c5303a369b5884b26023d0ad712f4, type: 3}
       propertyPath: startingWall
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1592368757}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -107,6 +107,9 @@ public class BallControl : MonoBehaviour
         endPos.x = Mathf.Clamp(endPos.x, transform.position.x - maxLineWidth, transform.position.x + maxLineWidth);
         endPos.y = Mathf.Clamp(endPos.y, transform.position.y, transform.position.y + maxLineHeight);
 
+        Vector3 curve = Vector3.down * (Mathf.Pow((endPos - transform.position).magnitude / maxForce, 2f) * 0.5f);
+        endPos += curve;
+
         lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, endPos);
 
