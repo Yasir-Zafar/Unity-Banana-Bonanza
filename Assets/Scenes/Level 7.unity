@@ -1942,11 +1942,11 @@ Transform:
   m_GameObject: {fileID: 540012743}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4947305, y: 4.191676, z: 0.03334731}
+  m_LocalPosition: {x: -1.6, y: 3.54, z: 0}
   m_LocalScale: {x: 0.8208292, y: 0.59584, z: 1.4896001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2018736774}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &571472191
 PrefabInstance:
@@ -2855,11 +2855,11 @@ Transform:
   m_GameObject: {fileID: 988087370}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.19526957, y: 0.43167606, z: 0.03334731}
+  m_LocalPosition: {x: 0.09, y: -0.22, z: 0}
   m_LocalScale: {x: 0.6093374, y: 0.59136, z: 1.4784001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2018736774}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1000937353
 PrefabInstance:
@@ -3803,7 +3803,7 @@ GameObject:
   - component: {fileID: 1439386189}
   m_Layer: 0
   m_Name: Shield_1
-  m_TagString: PowerUp
+  m_TagString: Invincibility
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4445,11 +4445,11 @@ Transform:
   m_GameObject: {fileID: 1826656797}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8252697, y: 3.041676, z: 0.03334731}
+  m_LocalPosition: {x: 3.72, y: 2.3899999, z: 0}
   m_LocalScale: {x: 0.50176, y: 0.44799998, z: 1.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2018736774}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1860777702
 PrefabInstance:
@@ -4806,40 +4806,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1873291343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2018736773
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2018736774}
-  m_Layer: 0
-  m_Name: Clouds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2018736774
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018736773}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.105269566, y: -0.65167606, z: -0.03333968}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1826656800}
-  - {fileID: 988087373}
-  - {fileID: 540012746}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2062236393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4980,5 +4946,7 @@ SceneRoots:
   - {fileID: 293337801}
   - {fileID: 340255962}
   - {fileID: 1873291343}
-  - {fileID: 2018736774}
   - {fileID: 1728995028}
+  - {fileID: 1826656800}
+  - {fileID: 988087373}
+  - {fileID: 540012746}
