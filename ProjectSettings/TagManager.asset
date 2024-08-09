@@ -10,7 +10,8 @@ TagManager:
   - Enemy
   - Gem
   - Invincibility
-  - PowerUp
+  - PowerUp1
+  - PowerUp2
   layers:
   - Default
   - TransparentFX

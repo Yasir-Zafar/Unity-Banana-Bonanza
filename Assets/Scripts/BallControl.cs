@@ -36,10 +36,13 @@ public class BallControl : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip Collect;
 
-    private void Start() {
+    private void Start()
+    {
         mainCamera = Camera.main; // Cache the Camera.main reference
         animator = GetComponent<Animator>();
-        
+
+        GameManager.Instance.PowerUp1 = false;
+        GameManager.Instance.PowerUp2 = false;
 
         lr.startWidth = lineStartWidth;
         lr.endWidth = lineEndWidth;
@@ -250,8 +253,16 @@ public class BallControl : MonoBehaviour
             collision.gameObject.SetActive(false);
             StartCoroutine(endInv());
         }
-        else if (collision.gameObject.CompareTag("PowerUp"))
+        else if (collision.gameObject.CompareTag("PowerUp1"))
         {
+            GameManager.Instance.PowerUp1 = true;
+            audioSource = GetComponent<AudioSource>();
+            audioSource.clip = Collect;
+            audioSource.Play();
+        }
+        else if(collision.gameObject.CompareTag("PowerUp2"))
+        {
+            GameManager.Instance.PowerUp2 = true;
             audioSource = GetComponent<AudioSource>();
             audioSource.clip = Collect;
             audioSource.Play();
