@@ -252,8 +252,7 @@ public class BallControl : MonoBehaviour
 
     private IEnumerator endInv()
     {
-        yield return new WaitForSeconds(13);
-        Debug.Log("\n\nNIgga\n\n");
+        yield return new WaitForSeconds(9);
         GameManager.Instance.Invincible = false;
     }
 }

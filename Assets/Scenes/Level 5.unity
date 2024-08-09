@@ -607,6 +607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 169498564}
+  - component: {fileID: 169498565}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -631,6 +632,18 @@ Transform:
   - {fileID: 545620929}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169498565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169498563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917f028c3cf145149be6a23deea19bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &174332144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -742,6 +755,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2280214076296578032, guid: 6e99f8d1bffdcf3ec9b64b119e06003e, type: 3}
   m_PrefabInstance: {fileID: 174332144}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &183064222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183064225}
+  - component: {fileID: 183064224}
+  - component: {fileID: 183064223}
+  m_Layer: 5
+  m_Name: Nigga
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &183064223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183064222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 795c602bfdb13b546a3e2a3c04278419, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &183064224
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183064222}
+  m_CullTransparentMesh: 1
+--- !u!224 &183064225
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183064222}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4.124266, y: 4.124266, z: 4.124266}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1931793459}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -261.99997, y: -588.99994}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &237400996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,6 +1368,56 @@ MonoBehaviour:
   BananaF: {fileID: 520071162}
   MonkeSad: {fileID: 174332145}
   MonkeDance: {fileID: 601784622}
+--- !u!1 &444325797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 444325799}
+  - component: {fileID: 444325798}
+  m_Layer: 0
+  m_Name: NIggaController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &444325798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444325797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 531708f8752289246a15775fc103cc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NiggaBar: {fileID: 183064223}
+  one: {fileID: 2800000, guid: 795c602bfdb13b546a3e2a3c04278419, type: 3}
+  two: {fileID: 2800000, guid: a1248aaa9fa3e194c96182a70cda7606, type: 3}
+  three: {fileID: 2800000, guid: add7210c6adee814c93b259149b9ca26, type: 3}
+  four: {fileID: 2800000, guid: c36015cab03711e458749cf4e54e522d, type: 3}
+  five: {fileID: 2800000, guid: 28a7334bb43bc114899b87c81c23b2b8, type: 3}
+--- !u!4 &444325799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444325797}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9203594, y: 0.72267383, z: -0.0746228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &520071159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3180,6 +3315,8 @@ MonoBehaviour:
   Retry: {fileID: 71667952}
   Next: {fileID: 268895656}
   awww: {fileID: 8300000, guid: 9df2c4999c7edd146aeb20ffe190d53b, type: 3}
+  supah: {fileID: 8300000, guid: ae3863c1cdc185240bbeacd10ef5d55c, type: 3}
+  wtf: 0
   leaves: {fileID: 371074566}
   head: {fileID: 371074565}
   rightUpperArm: {fileID: 371074564}
@@ -3815,6 +3952,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 690028911}
+  - {fileID: 183064225}
   - {fileID: 404963781}
   - {fileID: 71667948}
   - {fileID: 268895652}
@@ -4197,3 +4335,4 @@ SceneRoots:
   - {fileID: 1931793459}
   - {fileID: 825889985}
   - {fileID: 588852875}
+  - {fileID: 444325799}

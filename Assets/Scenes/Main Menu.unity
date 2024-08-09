@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dcad3dc87f3183c8954a52b30e2aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemCollected: {fileID: 8300000, guid: 8150539f5325f0d478a3870f3c77d1e4, type: 3}
+  GemCollected: {fileID: 8300000, guid: 7c863522b9ace4341bd4fd284f6e5568, type: 3}
 --- !u!82 &912934255
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1251,6 +1251,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stars: 000000000000000000000000000000000000000000000000000000000000000000000000
+  lose: 0
+  niggaPower: 0
+  Invincible: 0
+  PowerUp: 0
 --- !u!1 &1135926210 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3815787069907442241, guid: e79eb53c15fa3f643abc0fc8a0c0e8eb, type: 3}

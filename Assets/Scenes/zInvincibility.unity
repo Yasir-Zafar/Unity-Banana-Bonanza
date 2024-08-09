@@ -336,7 +336,8 @@ MonoBehaviour:
   Retry: {fileID: 369934593}
   Next: {fileID: 1181469059}
   awww: {fileID: 8300000, guid: 9df2c4999c7edd146aeb20ffe190d53b, type: 3}
-  supah: {fileID: 8300000, guid: f973e76208d9d884e90bfd3acfc51189, type: 3}
+  supah: {fileID: 8300000, guid: ae3863c1cdc185240bbeacd10ef5d55c, type: 3}
+  wtf: 0
   leaves: {fileID: 611773219}
   head: {fileID: 611773218}
   rightUpperArm: {fileID: 611773217}
@@ -348,7 +349,6 @@ MonoBehaviour:
   torso: {fileID: 611773211}
   tail: {fileID: 611773210}
   levelIndex: 8
-  colorChangeInterval: 0.1
 --- !u!82 &109037782
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1918,6 +1918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 902653932}
+  - component: {fileID: 902653933}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -1943,10 +1944,22 @@ Transform:
   - {fileID: 2052964629}
   - {fileID: 1275710283}
   - {fileID: 376699936}
-  - {fileID: 1746266914}
   - {fileID: 151292024}
+  - {fileID: 1746266914}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902653933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902653931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917f028c3cf145149be6a23deea19bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910605272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3479,6 +3492,7 @@ MonoBehaviour:
   lose: 0
   niggaPower: 0
   Invincible: 0
+  PowerUp: 0
 --- !u!4 &1418609892
 Transform:
   m_ObjectHideFlags: 0

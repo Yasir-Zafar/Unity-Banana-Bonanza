@@ -36,13 +36,14 @@ public class PlayerCollision : MonoBehaviour
 
     public int levelIndex;
 
-    private Color[] boom = { Color.red,Color.green,Color.blue,Color.yellow,Color.magenta,Color.cyan,Color.white};
+    private Color kaka;
+    private Color not_kaka;
     private int currentColorIndex = 0;
-    public float colorChangeInterval = 0.1f;
     private float timer;
 
     void Start()
     {
+        not_kaka = leaves.color;
         GameManager.Instance.lose = false;
         LevelSelect.gameObject.SetActive(false);
         Retry.gameObject.SetActive(false);
@@ -61,38 +62,34 @@ public class PlayerCollision : MonoBehaviour
             {
                 super();
             }
-            timer += Time.deltaTime;
 
-            if (timer >= colorChangeInterval)
-            {
-                timer = 0f;
+            kaka = leaves.color;
+            kaka.a = Mathf.Clamp01(0.5f);
+            leaves.color = kaka;
+            head.color = kaka;
+            rightUpperArm.color = kaka;
+            leftUpperArm.color = kaka;
+            rightLowerArm.color = kaka;
+            leftLowerArm.color = kaka;
+            rightLeg.color = kaka;
+            leftLeg.color = kaka;
+            torso.color = kaka;
+            tail.color = kaka;
 
-                currentColorIndex = (currentColorIndex + 1) % boom.Length;
 
-                leaves.color = boom[currentColorIndex];
-                head.color = boom[currentColorIndex];
-                rightUpperArm.color = boom[currentColorIndex];
-                leftUpperArm.color = boom[currentColorIndex];
-                rightLowerArm.color = boom[currentColorIndex];
-                leftLowerArm.color = boom[currentColorIndex];
-                rightLeg.color = boom[currentColorIndex];
-                leftLeg.color = boom[currentColorIndex];
-                torso.color = boom[currentColorIndex];
-                tail.color = boom[currentColorIndex];
-            }
         }
         else if(GameManager.Instance.Invincible == false)
         {
-            leaves.color = boom[6];
-            head.color = boom[6];
-            rightUpperArm.color = boom[6];
-            leftUpperArm.color = boom[6];
-            rightLowerArm.color = boom[6];
-            leftLowerArm.color = boom[6];
-            rightLeg.color = boom[6];
-            leftLeg.color = boom[6];
-            torso.color = boom[6];
-            tail.color = boom[6];
+            leaves.color = not_kaka;
+            head.color = not_kaka;
+            rightUpperArm.color = not_kaka;
+            leftUpperArm.color = not_kaka;
+            rightLowerArm.color = not_kaka;
+            leftLowerArm.color = not_kaka;
+            rightLeg.color = not_kaka;
+            leftLeg.color = not_kaka;
+            torso.color = not_kaka;
+            tail.color = not_kaka;
         }
     }
 
@@ -117,9 +114,14 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("Collided with Enemy!"); // Add this line
             LoseScreen();
         }
-        else if (collision.gameObject.CompareTag("Enemy") && GameManager.Instance.Invincible == true)
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Enemy") && GameManager.Instance.Invincible == true)
         {
-            collision.gameObject.SetActive(false);
+            Debug.Log("Passed through" + collision.gameObject.name);
         }
     }
 
@@ -155,13 +157,6 @@ public class PlayerCollision : MonoBehaviour
         AudioManager.Instance.audioSource.Play();
     }
 
-    private IEnumerator PlayAgainAfterSuper()
-    {
-        yield return new WaitForSeconds(13);
-        audioSource.Pause();
-        AudioManager.Instance.audioSource.Play();
-    }
-
     private void super()
     {
         if (AudioManager.Instance.play == true)
@@ -169,9 +164,7 @@ public class PlayerCollision : MonoBehaviour
             if (GameManager.Instance.Invincible == true)
             {
                 audioSource.clip = supah;
-                AudioManager.Instance.audioSource.Pause();
                 audioSource.Play();
-                StartCoroutine(PlayAgainAfterSuper());
             }
         }
     }
