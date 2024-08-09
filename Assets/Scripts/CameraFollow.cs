@@ -63,7 +63,7 @@ public class CameraFollow : MonoBehaviour
 
         minBounds = new Vector2(
             0,
-            floorY + cameraHeight / 2
+            floorY + (cameraHeight / 2) -0.4f
         );
         maxBounds = new Vector2(
             0,

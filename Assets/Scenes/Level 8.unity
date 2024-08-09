@@ -2979,7 +2979,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ae3863c1cdc185240bbeacd10ef5d55c, type: 3}
     - target: {fileID: 5313527876412095497, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
       propertyPath: maxForce
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5313527876412095497, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
       propertyPath: MHMAttempt
