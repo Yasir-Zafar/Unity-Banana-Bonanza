@@ -33,6 +33,8 @@ public class BallControl : MonoBehaviour
     private Vector3 previousDirection;
 
     public Animator MHMAttempt;
+    private AudioSource audioSource;
+    public AudioClip Collect;
 
     private void Start() {
         mainCamera = Camera.main; // Cache the Camera.main reference
@@ -247,6 +249,12 @@ public class BallControl : MonoBehaviour
             GameManager.Instance.Invincible = true;
             collision.gameObject.SetActive(false);
             StartCoroutine(endInv());
+        }
+        else if (collision.gameObject.CompareTag("PowerUp"))
+        {
+            audioSource = GetComponent<AudioSource>();
+            audioSource.clip = Collect;
+            audioSource.Play();
         }
     }
 
