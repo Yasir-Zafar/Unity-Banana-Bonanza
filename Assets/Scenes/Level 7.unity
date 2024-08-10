@@ -4933,8 +4933,8 @@ MonoBehaviour:
   MY: {fileID: 2800000, guid: 27e9a79ba06e27447ace7c7b574e2eb1, type: 3}
   RY: {fileID: 2800000, guid: b0b008e7e4b73ff449790032a20393c8, type: 3}
   starsCount: 0
-  levelIndex: 5
-  maxGems: 3
+  levelIndex: 6
+  maxGems: 1
 --- !u!4 &2013112843
 Transform:
   m_ObjectHideFlags: 0
