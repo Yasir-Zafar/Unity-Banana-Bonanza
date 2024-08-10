@@ -131,44 +131,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5313527876412095497, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
-      propertyPath: Dead
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313527876412095497, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
-      propertyPath: GokuPose
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313527876412095497, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
       propertyPath: ringRenderer
       value: 
       objectReference: {fileID: 404435995}
     - target: {fileID: 5317647833393377326, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317647833393377326, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
+      propertyPath: m_Parameters.textureMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5317647833393377326, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5317647833393377326, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.2048201
-      objectReference: {fileID: 0}
-    - target: {fileID: 5317647833393377326, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7821440740466853158, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
       propertyPath: m_Name
       value: Monkey
-      objectReference: {fileID: 0}
-    - target: {fileID: 8954087608422554949, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8954087608422554949, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8954087608422554949, guid: be3899f9eae23478192de961b6d0ce43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1902,7 +1886,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &876412926
@@ -2116,7 +2100,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1233998004
@@ -3394,7 +3378,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1938028947

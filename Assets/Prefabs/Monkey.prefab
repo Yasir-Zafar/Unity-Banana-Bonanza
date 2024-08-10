@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c34bce064764055bdb113e9b0353f250, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.67
+      value: -4.23
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c34bce064764055bdb113e9b0353f250, type: 3}
       propertyPath: m_LocalPosition.z
@@ -419,7 +419,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.2048201
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -428,7 +428,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.1850394
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
