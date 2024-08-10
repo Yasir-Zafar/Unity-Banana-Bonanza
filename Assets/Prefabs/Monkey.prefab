@@ -493,14 +493,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 5
   sensitivity: 4
-  maxForce: 15
-  maxLineHeight: 2.9
-  maxLineWidth: 2.5
+  maxForce: 9
+  maxLineHeight: 2
+  maxLineWidth: 2
   glideSpeed: 5
   rb: {fileID: 6357107104950607735}
   lr: {fileID: 5317647833393377326}
+  ringRenderer: {fileID: 0}
+  ringRadius: 0.3
+  ringSegmentCount: 100
   lineStartWidth: 0.05
   lineEndWidth: 0.45
-  initialScale: {x: 0, y: 0, z: 0}
-  maxSquash: 0.1
-  MHMAttempt: {fileID: 0}
+  MHMAttempt: {fileID: 848223082869851266}
+  Collect: {fileID: 8300000, guid: ae3863c1cdc185240bbeacd10ef5d55c, type: 3}

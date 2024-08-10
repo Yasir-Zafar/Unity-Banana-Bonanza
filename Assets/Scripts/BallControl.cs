@@ -17,6 +17,10 @@ public class BallControl : MonoBehaviour
     public Rigidbody2D rb;
     public LineRenderer lr;
 
+    public LineRenderer ringRenderer;
+    public float ringRadius = 0.3f;
+    public int ringSegmentCount = 100;
+
     public static bool touchControlsEnabled = true; 
 
     private Animator animator;
@@ -35,6 +39,8 @@ public class BallControl : MonoBehaviour
     public Animator MHMAttempt;
     private AudioSource audioSource;
     public AudioClip Collect;
+
+    private ScreenShake screenShake;
 
     private void Start()
     {
@@ -55,10 +61,20 @@ public class BallControl : MonoBehaviour
             lr.startColor = startColor;
             lr.endColor = endColor;
 
+            Color ringColor = ringRenderer.startColor;
+            ringColor.a = 0.5f;
+            ringRenderer.startColor = ringColor;
+            ringRenderer.endColor = ringColor;
+
             lr.widthMultiplier = 0.6f;
             lr.positionCount = 0;
         } else {
             Debug.LogWarning("LineRenderer is not assigned!");
+        }
+
+        if (mainCamera != null)
+        {
+            screenShake = mainCamera.GetComponent<ScreenShake>();
         }
 
         MHMAttempt.Play("monkey_idle");
@@ -86,9 +102,12 @@ public class BallControl : MonoBehaviour
     void DragStart() {
         dragStartPos = mainCamera.ScreenToWorldPoint(touch.position);
         dragStartPos.z = 0f;
+
         lr.positionCount = 2;
-        lr.SetPosition(0, transform.position); 
-        lr.SetPosition(1, transform.position);
+        lr.SetPosition(0, dragStartPos); // Set the starting point at the touch position
+        lr.SetPosition(1, dragStartPos);
+
+        DrawRing(dragStartPos); 
 
         MHMAttempt.Play("monkey_idle");
     }
@@ -100,17 +119,17 @@ public class BallControl : MonoBehaviour
         draggingPos.z = 0f;
 
         Vector3 dragVector = draggingPos - dragStartPos;
-        GameManager.Instance.niggaPower = dragVector.magnitude;
-        Debug.Log(GameManager.Instance.niggaPower);
 
-        Vector3 endPos = transform.position - dragVector;
-        endPos.x = Mathf.Clamp(endPos.x, transform.position.x - maxLineWidth, transform.position.x + maxLineWidth);
-        endPos.y = Mathf.Clamp(endPos.y, transform.position.y, transform.position.y + maxLineHeight);
+        Vector3 invertedDragVector = -dragVector;
 
-        Vector3 curve = Vector3.down * (Mathf.Pow((endPos - transform.position).magnitude / maxForce, 2f) * 0.5f);
-        endPos += curve;
+        float maxDragLength = maxLineHeight; 
+        if (invertedDragVector.magnitude > maxDragLength) {
+            invertedDragVector = invertedDragVector.normalized * maxDragLength;
+        }
 
-        lr.SetPosition(0, transform.position); 
+        Vector3 endPos = dragStartPos + invertedDragVector;
+
+        lr.SetPosition(0, dragStartPos);
         lr.SetPosition(1, endPos);
 
         FlipSprite(dragVector);
@@ -133,8 +152,48 @@ public class BallControl : MonoBehaviour
             onBranch = false;
             currentBranch = null;
         }
-        MHMAttempt.Play("MHMAttemptForJump");
 
+        ClearRing();
+
+        MHMAttempt.Play("MHMAttemptForJump");
+        TriggerImpactEffect();
+    }
+
+    void ClearRing() {
+        if (ringRenderer != null) {
+            ringRenderer.positionCount = 0; // Clear the ring
+        }
+    }
+
+    private void TriggerImpactEffect() {
+        if (audioSource != null && Collect != null) {
+            audioSource.clip = Collect;
+            audioSource.Play();
+        }
+
+        if (screenShake != null) {
+            screenShake.Shake(0.1f, 0.014f); // Adjust duration and magnitude as needed
+        }
+    }  
+
+    void DrawRing(Vector3 center) {
+        if (ringRenderer == null) {
+            Debug.LogWarning("Ring Renderer is not assigned!");
+            return;
+        }
+
+        ringRenderer.positionCount = ringSegmentCount + 1;
+        float angle = 0f;
+
+        for (int i = 0; i <= ringSegmentCount; i++) {
+            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * ringRadius;
+            float y = Mathf.Cos(Mathf.Deg2Rad * angle) * ringRadius;
+
+            ringRenderer.SetPosition(i, new Vector3(x, y, 0) + center);
+            angle += (360f / ringSegmentCount);
+        }
+
+        ringRenderer.loop = true; // Ensure the ring connects back to the start
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

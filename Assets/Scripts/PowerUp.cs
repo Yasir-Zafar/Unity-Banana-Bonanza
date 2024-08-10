@@ -1,8 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PowerMove : MonoBehaviour
 {
     public float powerIncrease = 5f;
+    public float heightIncrease = 0.2f;
+    public float widthIncrease = 0.1f;
 
     private void Start()
     {
@@ -11,18 +14,14 @@ public class PowerMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("PowerMove collided with something.");
-
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("PowerMove collided with Player.");
-
             BallControl ballControl = collision.GetComponent<BallControl>();
             if (ballControl != null)
             {
-                Debug.Log("BallControl script found on Player.");
                 ballControl.maxForce += powerIncrease;
-                Debug.Log("Player's maxPower increased by " + powerIncrease + ". New maxPower: " + ballControl.maxForce);
+                ballControl.maxLineHeight += heightIncrease;
+                ballControl.maxLineWidth += widthIncrease;
             }
             else
             {
@@ -32,7 +31,7 @@ public class PowerMove : MonoBehaviour
             // Play sound effect or animation if needed
             // AudioSource.PlayClipAtPoint(powerUpSound, transform.position);
 
-            Destroy(gameObject); // Remove the power-up item after collection
+            Destroy(gameObject);
         }
         else
         {
