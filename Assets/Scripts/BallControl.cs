@@ -166,11 +166,6 @@ public class BallControl : MonoBehaviour
     }
 
     private void TriggerImpactEffect() {
-        if (audioSource != null && Collect != null) {
-            audioSource.clip = Collect;
-            audioSource.Play();
-        }
-
         if (screenShake != null) {
             screenShake.Shake(0.1f, 0.014f); // Adjust duration and magnitude as needed
         }
