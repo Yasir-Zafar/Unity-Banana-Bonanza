@@ -49,6 +49,7 @@ public class BallControl : MonoBehaviour
 
         GameManager.Instance.PowerUp1 = false;
         GameManager.Instance.PowerUp2 = false;
+        GameManager.Instance.Invincible = false;
 
         lr.startWidth = lineStartWidth;
         lr.endWidth = lineEndWidth;
