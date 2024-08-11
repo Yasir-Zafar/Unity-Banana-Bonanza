@@ -125,6 +125,8 @@ public class BallControl : MonoBehaviour
 
         lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, endPos);
+
+        FlipSprite(dragVector);
     }
 
     void DragRelease() {
@@ -137,14 +139,11 @@ public class BallControl : MonoBehaviour
         Vector3 force = dragStartPos - dragReleasePos;
         Vector3 clampedForce = Vector3.ClampMagnitude(force, sensitivity) * power;
 
-        // Calculate the drag length as a fraction of the maximum allowed length
         float dragLengthFraction = Mathf.Clamp01(force.magnitude / maxForce);
 
-        // Apply an inverse quadratic easing function: easingValue = 1 - (dragLengthFraction^2)
         float easingValue = 1 - Mathf.Pow(dragLengthFraction, 2);
 
-        // Reduce the clamped force to ensure the overall applied force is less
-        float forceReductionFactor = 0.7f; // Adjust this value to fine-tune the total force reduction
+        float forceReductionFactor = 0.7f; 
         clampedForce *= easingValue * forceReductionFactor;
 
         clampedForce = Vector3.ClampMagnitude(clampedForce, maxForce);
@@ -264,27 +263,17 @@ public class BallControl : MonoBehaviour
 
     private bool isFlipped = false;
 
-    private void FlipSprite(Vector3 dragVector)
-    {
+    private void FlipSprite(Vector3 dragVector) {
         float direction = dragVector.x;
-        Vector3 localScale = transform.localScale;
-
-        if (Mathf.Abs(direction - previousDirection.x) > directionBuffer)
-        {
-            if (direction < 0 && !isFlipped)
-            {
-                isFlipped = true;
+        if (Mathf.Abs(direction - previousDirection.x) > directionBuffer) {
+            Vector3 localScale = transform.localScale;
+            if (direction < 0 && localScale.x != 1) {
+                transform.localScale = new Vector3(1.2f, localScale.y, localScale.z);
+            } else if (direction > 0 && localScale.x != -1) {
+                transform.localScale = new Vector3(-1.2f, localScale.y, localScale.z);
             }
-            else if (direction > 0 && isFlipped)
-            {
-                isFlipped = false;
-            }
-
             previousDirection = dragVector;
         }
-
-        float flipMultiplier = isFlipped ? -1f : 1f;
-        transform.localScale = new Vector3(flipMultiplier * Mathf.Abs(localScale.x), localScale.y, localScale.z);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

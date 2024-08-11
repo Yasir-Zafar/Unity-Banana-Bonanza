@@ -22,6 +22,13 @@ public class CameraFollow : MonoBehaviour
 
     private static bool hasPlayedCinematic = false;
 
+    public float zoomInFactor = 2f;
+    public float zoomDuration = 1f;
+    public float slowMotionDuration = 3f;
+    
+    private float originalTimeScale;
+    private float originalOrthographicSize;
+
     private void Start()
     {
         mainCamera = GetComponent<Camera>();
@@ -102,5 +109,37 @@ public class CameraFollow : MonoBehaviour
     public static void ResetCinematic()
     {
         hasPlayedCinematic = false;
+    }
+
+    public IEnumerator ZoomInOnPlayer()
+    {
+        originalTimeScale = Time.timeScale;
+        originalOrthographicSize = mainCamera.orthographicSize;
+
+        // Slow down time
+        Time.timeScale = 0.1f;
+
+        // Zoom in
+        float elapsedTime = 0f;
+        while (elapsedTime < zoomDuration)
+        {
+            mainCamera.orthographicSize = Mathf.Lerp(originalOrthographicSize, originalOrthographicSize / zoomInFactor, elapsedTime / zoomDuration);
+            elapsedTime += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        // Hold the zoom for a moment
+        yield return new WaitForSecondsRealtime(slowMotionDuration - zoomDuration);
+
+        // Zoom out and restore time scale
+        elapsedTime = 0f;
+        while (elapsedTime < zoomDuration)
+        {
+            mainCamera.orthographicSize = Mathf.Lerp(originalOrthographicSize / zoomInFactor, originalOrthographicSize, elapsedTime / zoomDuration);
+            elapsedTime += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        Time.timeScale = originalTimeScale;
     }
 }

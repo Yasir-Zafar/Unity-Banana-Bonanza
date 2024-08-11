@@ -7110,6 +7110,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 902653932}
     m_Modifications:
+    - target: {fileID: 566912815369630091, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 060085f779f3d3f9a92547f1ba9faa11, type: 3}
+    - target: {fileID: 566912815369630091, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 828189296054910772, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
       propertyPath: m_Name
       value: Vine Anchor
@@ -7166,6 +7174,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2280296114353214017, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004112087960355599, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.54702926
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004112087960355599, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.32276753
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004112087960355599, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004112087960355599, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 7.08
+      objectReference: {fileID: 0}
     - target: {fileID: 3994624702772632680, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.07
@@ -7173,6 +7201,14 @@ PrefabInstance:
     - target: {fileID: 3994624702772632680, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132842633738147368, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343616352513095117, guid: 776093b341e0e91ddbb0f660180abd05, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
