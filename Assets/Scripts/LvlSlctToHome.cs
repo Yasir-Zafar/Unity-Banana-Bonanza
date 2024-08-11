@@ -50,4 +50,26 @@ public class LvlSlctToHome : MonoBehaviour
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void ShopWithDelay()
+    {
+        StartCoroutine(ShopFr());
+    }
+
+    private IEnumerator ShopFr()
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("Shop");
+    }
+
+    public void ShopToLvlSelectWithDelay()
+    {
+        StartCoroutine(ShopToLvlSelectFR());
+    }
+
+    private IEnumerator ShopToLvlSelectFR()
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("Level Select");
+    }
 }

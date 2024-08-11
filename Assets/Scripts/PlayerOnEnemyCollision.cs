@@ -38,7 +38,6 @@ public class PlayerCollision : MonoBehaviour
 
     private Color kaka;
     private Color not_kaka;
-    private int currentColorIndex = 0;
     private float timer;
 
     void Start()

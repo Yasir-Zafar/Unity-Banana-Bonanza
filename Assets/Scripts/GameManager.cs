@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -29,14 +30,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    
+
     // Method to load game data, including starsCount for each level
     private void LoadGameData()
     {
+        //stars
         for (int i = 0; i < stars.Length; i++)
         {
             stars[i] = PlayerPrefs.GetInt($"Level{i + 1}Stars", 0); // Default to 0 if not set
         }
 
+        //bananas
         bananas = PlayerPrefs.GetInt("Bananas", 0);
     }
 

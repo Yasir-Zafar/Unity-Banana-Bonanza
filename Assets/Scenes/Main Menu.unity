@@ -1277,6 +1277,7 @@ MonoBehaviour:
   Invincible: 0
   PowerUp1: 0
   PowerUp2: 0
+  bananas: 0
 --- !u!1 &1135926210 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3815787069907442241, guid: e79eb53c15fa3f643abc0fc8a0c0e8eb, type: 3}
