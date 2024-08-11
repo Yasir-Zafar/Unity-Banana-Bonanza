@@ -137,6 +137,16 @@ public class BallControl : MonoBehaviour
         Vector3 force = dragStartPos - dragReleasePos;
         Vector3 clampedForce = Vector3.ClampMagnitude(force, sensitivity) * power;
 
+        // Calculate the drag length as a fraction of the maximum allowed length
+        float dragLengthFraction = Mathf.Clamp01(force.magnitude / maxForce);
+
+        // Apply an inverse quadratic easing function: easingValue = 1 - (dragLengthFraction^2)
+        float easingValue = 1 - Mathf.Pow(dragLengthFraction, 2);
+
+        // Reduce the clamped force to ensure the overall applied force is less
+        float forceReductionFactor = 0.7f; // Adjust this value to fine-tune the total force reduction
+        clampedForce *= easingValue * forceReductionFactor;
+
         clampedForce = Vector3.ClampMagnitude(clampedForce, maxForce);
 
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
