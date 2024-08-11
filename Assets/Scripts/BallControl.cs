@@ -42,6 +42,9 @@ public class BallControl : MonoBehaviour
 
     private ScreenShake screenShake;
 
+    public Vector3 normalScale;
+    public float squishSpeed = 15f;
+
     private void Start()
     {
         mainCamera = Camera.main; // Cache the Camera.main reference
@@ -50,6 +53,8 @@ public class BallControl : MonoBehaviour
         GameManager.Instance.PowerUp1 = false;
         GameManager.Instance.PowerUp2 = false;
         GameManager.Instance.Invincible = false;
+
+        normalScale = new Vector3(1.2f, 1.2f, 1f);
 
         lr.startWidth = lineStartWidth;
         lr.endWidth = lineEndWidth;
@@ -61,11 +66,6 @@ public class BallControl : MonoBehaviour
             endColor.a = 0.1f;
             lr.startColor = startColor;
             lr.endColor = endColor;
-
-            Color ringColor = ringRenderer.startColor;
-            ringColor.a = 0.5f;
-            ringRenderer.startColor = ringColor;
-            ringRenderer.endColor = ringColor;
 
             lr.widthMultiplier = 0.6f;
             lr.positionCount = 0;
@@ -105,10 +105,8 @@ public class BallControl : MonoBehaviour
         dragStartPos.z = 0f;
 
         lr.positionCount = 2;
-        lr.SetPosition(0, dragStartPos); // Set the starting point at the touch position
+        lr.SetPosition(0, dragStartPos);
         lr.SetPosition(1, dragStartPos);
-
-        DrawRing(dragStartPos); 
 
         MHMAttempt.Play("monkey_idle");
     }
@@ -120,20 +118,27 @@ public class BallControl : MonoBehaviour
         draggingPos.z = 0f;
 
         Vector3 dragVector = draggingPos - dragStartPos;
+        GameManager.Instance.niggaPower = dragVector.magnitude;
+        Debug.Log(GameManager.Instance.niggaPower);
 
-        Vector3 invertedDragVector = -dragVector;
+        Vector3 endPos = transform.position - dragVector;
+        endPos.x = Mathf.Clamp(endPos.x, transform.position.x - maxLineWidth, transform.position.x + maxLineWidth);
+        endPos.y = Mathf.Clamp(endPos.y, transform.position.y, transform.position.y + maxLineHeight);
 
-        float maxDragLength = maxLineHeight; 
-        if (invertedDragVector.magnitude > maxDragLength) {
-            invertedDragVector = invertedDragVector.normalized * maxDragLength;
-        }
+        Vector3 curve = Vector3.down * (Mathf.Pow((endPos - transform.position).magnitude / maxForce, 2f) * 0.5f);
+        endPos += curve;
 
-        Vector3 endPos = dragStartPos + invertedDragVector;
-
-        lr.SetPosition(0, dragStartPos);
+        lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, endPos);
 
-        FlipSprite(dragVector);
+        float maxDragLength = maxLineHeight;
+        float squishAmount = Mathf.Clamp01(dragVector.magnitude / maxDragLength);
+
+        transform.localScale = new Vector3(
+            normalScale.x * (1 + squishAmount * 0.05f),
+            normalScale.y * (1 - squishAmount * 0.15f),
+            normalScale.z
+        );
     }
 
     void DragRelease() {
@@ -154,16 +159,10 @@ public class BallControl : MonoBehaviour
             currentBranch = null;
         }
 
-        ClearRing();
-
         MHMAttempt.Play("MHMAttemptForJump");
         TriggerImpactEffect();
-    }
 
-    void ClearRing() {
-        if (ringRenderer != null) {
-            ringRenderer.positionCount = 0; // Clear the ring
-        }
+        transform.localScale = normalScale;
     }
 
     private void TriggerImpactEffect() {
@@ -171,27 +170,6 @@ public class BallControl : MonoBehaviour
             screenShake.Shake(0.1f, 0.014f); // Adjust duration and magnitude as needed
         }
     }  
-
-    void DrawRing(Vector3 center) {
-        if (ringRenderer == null) {
-            Debug.LogWarning("Ring Renderer is not assigned!");
-            return;
-        }
-
-        ringRenderer.positionCount = ringSegmentCount + 1;
-        float angle = 0f;
-
-        for (int i = 0; i <= ringSegmentCount; i++) {
-            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * ringRadius;
-            float y = Mathf.Cos(Mathf.Deg2Rad * angle) * ringRadius;
-
-            ringRenderer.SetPosition(i, new Vector3(x, y, 0) + center);
-            angle += (360f / ringSegmentCount);
-        }
-
-        ringRenderer.loop = true; // Ensure the ring connects back to the start
-    }
-
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collision with: " + collision.gameObject.name);
 
@@ -290,17 +268,29 @@ public class BallControl : MonoBehaviour
         rb.angularVelocity = 0f;
     }
 
-    private void FlipSprite(Vector3 dragVector) {
+    private bool isFlipped = false;
+
+    private void FlipSprite(Vector3 dragVector)
+    {
         float direction = dragVector.x;
-        if (Mathf.Abs(direction - previousDirection.x) > directionBuffer) {
-            Vector3 localScale = transform.localScale;
-            if (direction < 0 && localScale.x != 1) {
-                transform.localScale = new Vector3(1.2f, localScale.y, localScale.z);
-            } else if (direction > 0 && localScale.x != -1) {
-                transform.localScale = new Vector3(-1.2f, localScale.y, localScale.z);
+        Vector3 localScale = transform.localScale;
+
+        if (Mathf.Abs(direction - previousDirection.x) > directionBuffer)
+        {
+            if (direction < 0 && !isFlipped)
+            {
+                isFlipped = true;
             }
+            else if (direction > 0 && isFlipped)
+            {
+                isFlipped = false;
+            }
+
             previousDirection = dragVector;
         }
+
+        float flipMultiplier = isFlipped ? -1f : 1f;
+        transform.localScale = new Vector3(flipMultiplier * Mathf.Abs(localScale.x), localScale.y, localScale.z);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
