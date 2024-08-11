@@ -12,10 +12,12 @@ public class LevelSelectButton : MonoBehaviour
     public Animator BananaF;
     public Animator MonkeSad;
     public Animator MonkeDance;
+    public Animator GokuPose;
     public void toLvlsWithDelay()
     {
         MonkeSad.gameObject.SetActive(false);
         MonkeDance.gameObject.SetActive(false);
+        GokuPose.gameObject.SetActive(false);
         BananaBG.Play("BananaBGSpawn");
         BananaSF.Play("BananaSFSpawn");
         BananaF.Play("BananaFSpawn");

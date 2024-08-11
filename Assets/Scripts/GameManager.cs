@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public bool Invincible = false;
     public bool PowerUp1 = false;
     public bool PowerUp2 = false;
-
+    public int bananas = 0;
     private void Awake()
     {
         // Implementing the Singleton pattern
@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
         {
             stars[i] = PlayerPrefs.GetInt($"Level{i + 1}Stars", 0); // Default to 0 if not set
         }
+
+        bananas = PlayerPrefs.GetInt("Bananas", 0);
     }
 
     // Method to save starsCount for a specific level
@@ -49,6 +51,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SaveBananasCollected(int kela)
+    {
+        bananas += kela;
+        PlayerPrefs.SetInt("Bananas", bananas);
+        PlayerPrefs.Save();
+    }
+
     // Method to retrieve starsCount for a specific level
     public int GetStars(int levelIndex)
     {
@@ -59,6 +68,11 @@ public class GameManager : MonoBehaviour
         return 0; // Default to 0 if out of range
     }
 
+    public int GetBananas()
+    {
+        return bananas;
+    }
+
     public void ResetGameData()
     {
         // Reset stars array to default value (e.g., 0 stars for each level)
@@ -67,6 +81,10 @@ public class GameManager : MonoBehaviour
             stars[i] = 0; // Reset to 0 stars or a default value
             PlayerPrefs.SetInt($"Level{i + 1}Stars", 0);
         }
+
+
+        bananas = 0;
+        PlayerPrefs.SetInt("Bananas", 0);
 
         // Save the changes in PlayerPrefs
         PlayerPrefs.Save();
