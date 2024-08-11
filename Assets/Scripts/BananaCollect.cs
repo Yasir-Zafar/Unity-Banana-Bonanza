@@ -38,7 +38,7 @@ public class BananaCollect : MonoBehaviour
             {
                 // Move to top center
                 float t = (elapsedTime - circularDuration) / moveUpDuration;
-                Vector3 targetPosition = new Vector3(0, Screen.height, 0);
+                Vector3 targetPosition = new Vector3(1.5f, Screen.height - 1, 0);
                 targetPosition = Camera.main.ScreenToWorldPoint(targetPosition);
                 targetPosition.z = 0; // Ensure it's at the same z-depth
 

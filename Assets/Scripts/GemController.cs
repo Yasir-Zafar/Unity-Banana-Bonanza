@@ -20,7 +20,7 @@ public class Gem : MonoBehaviour
 
     private IEnumerator LetBananaFlyAway()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.9f);
         Destroy(gameObject);
     }
 }

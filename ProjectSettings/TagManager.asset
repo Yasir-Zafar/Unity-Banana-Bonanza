@@ -12,6 +12,7 @@ TagManager:
   - Invincibility
   - PowerUp1
   - PowerUp2
+  - Capsule
   layers:
   - Default
   - TransparentFX
