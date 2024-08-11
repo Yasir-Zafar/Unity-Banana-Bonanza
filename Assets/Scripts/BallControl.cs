@@ -42,9 +42,6 @@ public class BallControl : MonoBehaviour
 
     private ScreenShake screenShake;
 
-    public Vector3 normalScale;
-    public float squishSpeed = 15f;
-
     private void Start()
     {
         mainCamera = Camera.main; // Cache the Camera.main reference
@@ -53,8 +50,6 @@ public class BallControl : MonoBehaviour
         GameManager.Instance.PowerUp1 = false;
         GameManager.Instance.PowerUp2 = false;
         GameManager.Instance.Invincible = false;
-
-        normalScale = new Vector3(1.2f, 1.2f, 1f);
 
         lr.startWidth = lineStartWidth;
         lr.endWidth = lineEndWidth;
@@ -130,15 +125,6 @@ public class BallControl : MonoBehaviour
 
         lr.SetPosition(0, transform.position); 
         lr.SetPosition(1, endPos);
-
-        float maxDragLength = maxLineHeight;
-        float squishAmount = Mathf.Clamp01(dragVector.magnitude / maxDragLength);
-
-        transform.localScale = new Vector3(
-            normalScale.x * (1 + squishAmount * 0.05f),
-            normalScale.y * (1 - squishAmount * 0.15f),
-            normalScale.z
-        );
     }
 
     void DragRelease() {
@@ -161,8 +147,6 @@ public class BallControl : MonoBehaviour
 
         MHMAttempt.Play("MHMAttemptForJump");
         TriggerImpactEffect();
-
-        transform.localScale = normalScale;
     }
 
     private void TriggerImpactEffect() {
