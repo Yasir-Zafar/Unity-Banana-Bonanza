@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public bool PowerUp1 = false;
     public bool PowerUp2 = false;
     public int bananas = 0;
+    public bool ShieldTimeUp1 = false;
+    public bool ShieldTimeUp2 = false;
     private void Awake()
     {
         // Implementing the Singleton pattern

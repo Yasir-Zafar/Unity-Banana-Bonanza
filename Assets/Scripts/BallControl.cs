@@ -41,6 +41,7 @@ public class BallControl : MonoBehaviour
     public AudioClip Collect;
 
     private ScreenShake screenShake;
+    private int delay;
 
     private void Start()
     {
@@ -302,7 +303,19 @@ public class BallControl : MonoBehaviour
 
     private IEnumerator endInv()
     {
-        yield return new WaitForSeconds(9);
+        if(GameManager.Instance.ShieldTimeUp1 == false)
+        {
+            delay = 5;
+        }
+        else if(GameManager.Instance.ShieldTimeUp1 == true && GameManager.Instance.ShieldTimeUp2 == false)
+        {
+            delay = 9;
+        }
+        else if(GameManager.Instance.ShieldTimeUp1 == true && GameManager.Instance.ShieldTimeUp2 == true)
+        {
+            delay = 13;
+        }
+        yield return new WaitForSeconds(delay);
         GameManager.Instance.Invincible = false;
     }
 }
