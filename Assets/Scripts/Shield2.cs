@@ -4,10 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Shield1 : MonoBehaviour
+public class Shield2 : MonoBehaviour
 {
     public Button button2;
-    private Button button1;
     public AudioClip ring;
     private AudioSource audioSource;
     public TextMeshProUGUI txt;
@@ -16,25 +15,24 @@ public class Shield1 : MonoBehaviour
     {
         txt.gameObject.SetActive(false);
 
-        if(GameManager.Instance.ShieldTimeUp1 == true)
+        if (GameManager.Instance.ShieldTimeUp2 == true)
         {
-            button1 = GetComponent<Button>();
-            button1.gameObject.SetActive(false);
+            button2.gameObject.SetActive(false);
         }
 
-        if (GameManager.Instance.GetBananas() >= 10)
+        if (GameManager.Instance.ShieldTimeUp1 == true && GameManager.Instance.GetBananas() >= 15)
         {
-            button1 = GetComponent<Button>();
-            button1.interactable = true;
+            button2 = GetComponent<Button>();
+            button2.interactable = true;
         }
     }
 
-    public void UnlockShield1()
+    public void UnlockShield2()
     {
-        button1 = GetComponent<Button>();
-        GameManager.Instance.ShieldTimeUp1 = true;       
+        button2 = GetComponent<Button>();
+        GameManager.Instance.ShieldTimeUp2 = true;
         GameManager.Instance.SaveShieldTimes();
-        GameManager.Instance.SaveBananasCollected(-10);
+        GameManager.Instance.SaveBananasCollected(-15);
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = ring;
         audioSource.Play();
@@ -46,6 +44,6 @@ public class Shield1 : MonoBehaviour
     {
         yield return new WaitForSeconds(0.9f);
         txt.gameObject.SetActive(false);
-        button1.gameObject.SetActive(false);
+        button2.gameObject.SetActive(false);
     }
 }

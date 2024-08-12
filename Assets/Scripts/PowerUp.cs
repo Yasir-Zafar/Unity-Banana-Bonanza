@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -31,7 +32,7 @@ public class PowerMove : MonoBehaviour
             // Play sound effect or animation if needed
             // AudioSource.PlayClipAtPoint(powerUpSound, transform.position);
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         else
         {

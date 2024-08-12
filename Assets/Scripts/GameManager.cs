@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
 
         //bananas
         bananas = PlayerPrefs.GetInt("Bananas", 0);
+
+        //sheild ranks
+        ShieldTimeUp1 = PlayerPrefs.GetInt("ShieldTimeUp1", 0) == 1;
+        ShieldTimeUp2 = PlayerPrefs.GetInt("ShieldTimeUp2", 0) == 1;
     }
 
     // Method to save starsCount for a specific level
@@ -62,6 +66,13 @@ public class GameManager : MonoBehaviour
     {
         bananas += kela;
         PlayerPrefs.SetInt("Bananas", bananas);
+        PlayerPrefs.Save();
+    }
+
+    public void SaveShieldTimes()
+    {
+        PlayerPrefs.SetInt("ShieldTimeUp1", ShieldTimeUp1 ? 1 : 0);
+        PlayerPrefs.SetInt("ShieldTimeUp2", ShieldTimeUp2 ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -92,6 +103,11 @@ public class GameManager : MonoBehaviour
 
         bananas = 0;
         PlayerPrefs.SetInt("Bananas", 0);
+
+        ShieldTimeUp1 = false;
+        ShieldTimeUp2 = false;
+        PlayerPrefs.SetInt("ShieldTimeUp1", 0);
+        PlayerPrefs.SetInt("ShieldTimeUp2", 0);
 
         // Save the changes in PlayerPrefs
         PlayerPrefs.Save();
