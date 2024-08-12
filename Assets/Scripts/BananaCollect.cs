@@ -13,7 +13,7 @@ public class BananaCollect : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            unitX.x = 1f; unitX.y = 0.3f; unitX.z = 0;
+            unitX = new Vector3(1f, 0.3f, 0);
             startPosition = transform.position;
             startAnimation = true;
             elapsedTime = 0f;
