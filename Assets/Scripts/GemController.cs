@@ -14,13 +14,7 @@ public class Gem : MonoBehaviour
             GemManager.Instance.CollectGem();
             SmolBananaCollider = GetComponent<Collider2D>();
             Destroy(SmolBananaCollider);
-            StartCoroutine(LetBananaFlyAway());
+            Destroy(gameObject);
         }
-    }
-
-    private IEnumerator LetBananaFlyAway()
-    {
-        yield return new WaitForSeconds(0.9f);
-        Destroy(gameObject);
     }
 }

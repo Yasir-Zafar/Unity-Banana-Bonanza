@@ -2189,8 +2189,8 @@ Transform:
   m_GameObject: {fileID: 1716468999}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: -509, z: -15199.998}
-  m_LocalScale: {x: 133.42221, y: 168.88887, z: 168.88887}
+  m_LocalPosition: {x: 2, y: -619, z: -15199.998}
+  m_LocalScale: {x: 133.42221, y: 221.24442, z: 168.88887}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 638227021}
@@ -2459,8 +2459,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shield Duration Increased !!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3102,8 +3102,8 @@ Transform:
   m_GameObject: {fileID: 2144889431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 379, z: -15199.998}
-  m_LocalScale: {x: 151.72636, y: 209.4222, z: 209.4222}
+  m_LocalPosition: {x: 0, y: 447, z: -15199.998}
+  m_LocalScale: {x: 172.96805, y: 209.4222, z: 209.4222}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596115916}
