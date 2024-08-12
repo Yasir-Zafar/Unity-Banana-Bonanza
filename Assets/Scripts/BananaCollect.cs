@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class BananaCollect : MonoBehaviour
 {
-    public float circularDuration = 0.01f; // Duration of circular movement
-    public float moveUpDuration = 0.01f;   // Duration of moving up to the top center
-    public float circularRadius = 1f;   // Radius of the circular movement
+    public float circularDuration ; // Duration of circular movement
+    public float moveUpDuration;   // Duration of moving up to the top center
+    public float circularRadius;   // Radius of the circular movement
     private Vector3 startPosition;
     private bool startAnimation = false;
     private float elapsedTime = 0f;
